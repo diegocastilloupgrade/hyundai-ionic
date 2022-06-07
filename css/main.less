@@ -1,0 +1,1907 @@
+// out: main.css, sourcemap: false, compress: true
+@import "variables.less";
+
+html,body {
+  font-family: @text-regular;
+}
+a:focus{text-decoration: none;}
+a:hover{text-decoration: none;}
+:focus{outline: none!important;}
+.text-black{color: black!important;}
+.nowrap{white-space: nowrap;}
+h1 a {display: block;width: 100%; height: 100%;}
+.header {
+  box-shadow: 0 0 4px 0 rgba(0,0,0,0.3);padding-left:0; padding-right: 0;margin-bottom: 1rem; height: 50px;z-index: 99;background-color: white; position: fixed;top:0;width: 100%;
+  .logocontainer {
+//     width: 50%;
+     height: 50px; float:left; display: flex;
+    h1 {
+      color:@blueHyundai;background: url(../imgs/IONIQ.png) no-repeat center center;width:111px; height:24px; margin:1rem; padding:0; background-size:80%;
+      span{display: none;}
+    }
+  }
+  .progressbar{background-color: @blueHyundai;height: 4px; width: 0%;position: absolute;bottom: 1px;left: 0;}
+  .iconscontainer{
+    height: 50px; display: flex;
+    input {height: 40px;border:1px solid #3EC3DE; padding-left: 40px; background: url(../imgs/location-icon.png) no-repeat left center;align-self:center;background-size: auto 33px;}
+    a.account-icon {background: url(../imgs/account-circle-icon.png) no-repeat 10px center; height:33px; margin:0 2rem; align-self:center;padding-left:45px;font-size:18px;color:#3EC3DE;padding-top:5px;background-size:auto 100%;}
+    a.location-icon {background: url(../imgs/location-icon.png) no-repeat center center;width:33px; height:33px; margin:0 1rem; align-self:center;background-size:auto 100%;}
+    a.saveprogress {color: @blueHyundai;align-self: center;font-size: 18px; font-family: @DIN-Pro;}
+  }
+  i.fa-map-marker,
+  i.fa-user-circle {color:@blueHyundai; margin: 2rem;}
+}
+#containerTheQuiz, #containerLearnMore, #containerVideo {background: #fff;}
+#quizquestions {background-color: #e8eaeb;}
+#quizmorequestions {margin-bottom: 0; background: #fff; flex-wrap: wrap;}
+.otherquestioncontainer {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+.otherquestion{
+	background-size: 100%;
+	width:49%;
+	float: left;
+	height: 290px;
+	width: 49%;
+	margin-bottom: 1rem;
+	border-top: 2px solid #3EC3DE;
+	a:hover {
+		text-decoration: none;
+	}
+	h3{
+		font-size: 19px;
+		font-family: @DIN-Pro;
+		color: #fff;
+		padding: 1.5rem;
+		display: block;
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		padding: 1rem;
+		background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(255,255,255,0) 100%);
+	}
+	h3:hover{
+		background: linear-gradient(180deg, rgba(62,195,222,0.3) 0, rgba(62,195,222,0.7) 100%);
+	}
+	&.otherquestion1 {
+		margin-right: 2%;
+		background-image: url(../imgs/bck_which_ioniq_01.jpg);
+	}
+	&.otherquestion2 {
+		background-image: url(../imgs/bck_which_ioniq_02.jpg);
+	}
+	&.otherquestion3 {
+		margin-right: 2%;
+		background-image: url(../imgs/bck_which_ioniq_03.jpg);
+	}
+	&.otherquestion4 {
+		background-image: url(../imgs/bck_which_ioniq_04.jpg);
+	}
+	&.otherquestion5 {
+		margin-right: 2%;
+		background-image: url(../imgs/bck_which_ioniq_05.jpg);
+	}
+	&.current {
+		h3 {
+			background: rgba(62, 195, 222, 0.8);
+		}
+		&.completed div {
+			background: rgba(62, 195, 222, 0.8);
+		}
+	}
+  &.completed {
+//    &::after {content:" "; background: url(../imgs/Shape.png) no-repeat center center; background-size:60%; display:block; width:64px; height:64px; margin:0 auto;}
+    div {
+      width: 100%; height: 100%; padding: 1.5rem; background-color: rgba(190, 190, 190, 0.8);
+      p{color: #fff; font-size: 14px; font-family: @DIN-Pro}
+      hr{border-color:#fff;}
+      h3 {width: inherit;height: 60px;font-size: 19px;display: table-cell;padding: 0; background: none;font-family: @DIN-Pro}
+      h4 {font-family: @head-light;color: #fff;font-size: 14px;font-family: @DIN-Pro}
+    }
+  }
+}
+.quizfirstanswer {
+  margin: 60px auto 1rem; background: #fff;font-family: @text-regular;
+  div.headerquiz{
+    border-bottom:1px solid #BEBEBE;display: flex;justify-content: space-between;margin-bottom: 15px;
+    a.closequiz{background: url(../imgs/ic_close.png) no-repeat center center; float:right;width:24px;height:24px;display:block; float:right;padding:1rem 0 2rem; margin-top:20px;}
+    h2 {color: #000; font-size: 16px; padding:1rem 0 2rem; font-family:Hyundai Sans Head Light;}
+  }
+  a.navigationprev {display: block;position: fixed;left: -25px; top: 50%; background: url(../imgs/ic_arrow_prev.png) no-repeat center center; width:50px; height:50px;margin-top:-25px;z-index:10;}
+  a.navigationnext {display: block;position: fixed;right: -25px; top: 50%; background: url(../imgs/ic_arrow_next.png) no-repeat center center; width:50px; height:50px;margin-top:-25px;z-index:10;}
+  .answer{
+    background-color: #bebebe; margin:1rem 0; min-height: 120px;display: flex; justify-content: center; flex-direction: column;
+    div {background-image: linear-gradient(0deg, rgba(0,0,0,0.60) 0%, rgba(255,255,255,0.00) 100%);padding: 2rem;width: 100%; min-height: 120px;padding: 4rem 2rem 0;height: 100%;}
+    hr {border-color: #fff;width: 80%; margin: 1rem auto;}
+    h3{font-size: 24px; color: white;display: block;text-align: center;margin: 0;font-family: @DIN-Pro;}
+    h4{font-size: 16px; color: white;clear: both; text-align: center;font-family: @DIN-Pro;}
+    input.tripselector {
+      color: #fff;font-family:@DIN-Pro;background-color: transparent;border:solid 1px #fff; padding: 1rem; font-size: 16px;width: 80%;margin: 1rem auto;text-align: center;display: block;
+      &:hover {opacity: .8;text-decoration: none;}
+    }
+    p{font-size: 24px;align-self: center; text-align: center; font-family: @head-light;margin-bottom: 0;}
+  }
+  a{
+    height: 100%;
+    &:not(.navigationprev):not(.navigationnext):hover{
+      background: linear-gradient(180deg, rgba(62,195,222,0.3) 0, rgba(62,195,222,0.7) 100%);text-decoration: none;
+    }
+    &.navigationprev,
+    &.navigationnext{
+      &:hover{opacity: .6;}
+    }
+  }
+  .answerrentgarage{background: url(../imgs/img_park_showcase2.jpg) no-repeat center center; background-size:100%;}
+  .answerindividualgarage{background: url(../imgs/img_park_showcase1.jpg) no-repeat center center; background-size:100%;}
+  .answerstreet{background: url(../imgs/img_park_showcase3.jpg) no-repeat center center; background-size:100%;}
+  .answershort{background: url(../imgs/img_weekly_showcase1.jpg) no-repeat center center; background-size:100%;}
+  .answermoderate{background: url(../imgs/img_weekly_showcase2.jpg) no-repeat center center; background-size:100%;}
+  .answerhardcore{background: url(../imgs/img_weekly_showcase3.jpg) no-repeat center center; background-size:100%;}
+  .answercalendarfriend{background: url(../imgs/img_planner_showcase1.jpg) no-repeat center center; background-size:100%;}
+  .answereitherway{background: url(../imgs/img_planner_showcase2.jpg) no-repeat center center; background-size:100%;}
+  .answerdropgo {background: url(../imgs/img_planner_showcase3.jpg) no-repeat center center; background-size:100%;}
+  .answeralwaysplugged{background: url(../imgs/img_charge_shocase1.jpg) no-repeat center center; background-size:100%;}
+  .answercarrycharger{background: url(../imgs/img_charge_shocase2.jpg) no-repeat center center; background-size:100%;}
+  .answerdeadbattery{background: url(../imgs/img_charge_shocase3.jpg) no-repeat center center; background-size:100%;}
+  .answersanfrancisco{background: url(../imgs/img_trip_showcase1.png) no-repeat center center; background-size:100%;}
+  .answerlaketahoe{background: url(../imgs/img_trip_showcase2.png) no-repeat center center; background-size:100%;}
+  .answerlosangeles{background: url(../imgs/img_trip_showcase3.png) no-repeat center center; background-size:100%;}
+
+  #optionselectorbullets{
+    display: flex; justify-content: space-between; height:26px;
+    .selectbullet {
+      padding: 0 1rem;
+      &:first-child{padding-left:0;}
+      &:last-child{padding-right:0;}
+      a {width: 26px;height: 26px;display: block;background:url(../imgs/ic_oval_outline_big.png) no-repeat;}
+    }
+    .selected a {background: url(../imgs/ic_oval_fill_big.png) no-repeat left top;}
+    .selectbulletfill{width: 100%; height: 1px; background-color: @blueHyundai;margin-top: 13px;}
+  }
+  #optionselector {
+	  display: flex;
+	  justify-content: space-between;
+	  color: @blueHyundai;
+	  li {
+		  padding: 0;
+		  width: 30%;
+		  font-size: 12px;
+		  &:nth-child(1) {text-align: left;}
+		  &:nth-child(2) {text-align: center;}
+		  &:nth-child(3) {text-align: right;}
+		  a {
+			  color: #BEBEBE;
+			  span {
+				  min-height: 26px;
+				  display: block;
+				  font-size: 16px;
+				  font-family: @DIN-Pro;
+			  }
+			  &.selected {
+				  color: #8c8c8c;
+			  }
+			  &.selected span {
+				  color: @blueHyundai;
+				  + span {
+					  color: #8c8c8c;
+				  }
+			  }
+		  }
+	  }
+  }
+  h2{font-family: @DIN-Pro;font-size: 24px;}
+  .garageanswer {
+    .explanimg {display: block;background: url(../imgs/parking-1.png) no-repeat center center;width:100%;background-size:100% auto;height:200px;}
+    .garageanswer{display: block !important;}
+    .apartmentanswer, .streetanswer {display: none;}
+  }
+  .apartmentanswer {
+    .explanimg {display: block;background: url(../imgs/parking-2.png) no-repeat center center;width:100%;background-size:100% auto; height:200px;}
+    .apartmentanswer{display: block !important;}
+    .garageanswer, .streetanswer {display: none;}
+  }
+  .streetanswer{
+    .explanimg {display: block;background: url(../imgs/parking-3.png) no-repeat center center;width:100%;background-size:100% auto; height:200px;}
+    .streetanswer{display: block !important;}
+    .apartmentanswer, .garageanswer {display: none;}
+    #sendinfo {display: none;}
+
+  }
+  .chargermessage {font-family: @DIN-Pro; color: #8C8C8C; font-size: 16px; margin:1rem 0;}
+  ul#parkfeatures {
+    font-size: 16px; margin: 0; margin-bottom: 2rem; border-bottom:solid 1px @backgrounddarkgray;display: block; float: left; width: 100%; padding:2rem 0;
+    li{width:50%; padding: 0; float: left;font-family: @DIN-Pro;font-weight: bold;}
+  }
+  dl {
+    display: block; width:100%; float:left;
+    dt {color:@blueHyundai; font-size: 16px;font-family:@DIN-Pro;margin-bottom: 1rem;}
+    dd {color:#000;font-size:14px; font-family: @DIN-Pro; width:50%; float:left; margin-bottom: 2rem;}
+  }
+  a#sendinfo {
+    color: #fff; background-color:@blueHyundai; font-size: 16px; border:solid 1px @blueHyundai; padding:2rem; display: block;clear: both; margin-bottom: 2rem;font-family: @DIN-Pro;
+    &:hover {text-decoration: none;}
+  }
+}
+.quizparkathomeA{background: #E8EBEC;}
+.quizparkathomeB{
+  background: #E8EBEC;
+  a.navigationprev {display: block;position: absolute;/*left: -10px;*/ top: 25%; background: url(../imgs/ic_arrow_prev.png) no-repeat center center; width:50px; height:50px;margin-top:-25px}
+  a.navigationnext {display: block;position: absolute;/*right: 10px;*/ top: 25%; background: url(../imgs/ic_arrow_next.png) no-repeat center center; width:50px; height:50px;margin-top:-25px}
+  .quizfirstanswer .container .answercontainer .answercontainerleft {
+    /* Parking option Mobile 1 */
+    .imganswer {background: url(../imgs/img_park_showcase1.jpg) no-repeat center center; background-size:100%;}
+    /* Parking option Mobile 2 */
+    &.apartment .imganswer {background: url(../imgs/img_park_showcase2.jpg) no-repeat center center; background-size:100%;}
+    /* Parking option Mobile 3 */
+    &.street .imganswer {background: url(../imgs/img_park_showcase3.jpg) no-repeat center center; background-size:100%;}
+  }
+}
+
+#quizgeneratesummary {
+  background: #f4f4f4; width:100%; clear: both;padding: 1rem;
+  div#quizgeneratesummarycars {
+    margin:.5rem; display: flex;align-items: stretch;
+    h4{text-align: center;color: rgba(80, 80, 80, .4)}
+    .quizgeneratesummaryleft{
+      width: 30%;float: left;
+      img{margin: 0 auto; opacity: .3;width: 40px;}
+    }
+    .quizgeneratesummarycenter{
+      width: 40%;float: left;
+      img{margin: 0 auto;width: 40px;}
+      h4 {color: #3EC3DE;}
+    }
+    .quizgeneratesummaryright{
+      width: 30%; float: left;
+      img{margin: 0 auto; opacity: .3;width: 40px;}
+    }
+    .summaryimagecontainer {
+      height: 130px;
+      img {width: inherit;}
+    }
+  }
+  h4 {font-size: 16px;}
+  a {color: #fff; background: @blueHyundai;display: block;font-size: 16px; padding: 2rem; text-align: center; margin: 1rem 2rem;font-family: @head-light}
+  a:hover{opacity: .8;border:none; text-decoration: none;}
+}
+.quizaveragetripA{background: #E8EBEC;}
+.quizaveragetripB{
+  background: #E8EBEC;
+  .quizfirstanswer {
+    .answer {
+      flex-direction: column;padding: 2rem;
+      p:nth-child(2){font-size: 16px;}
+    }
+  }
+  .container .answercontainer {
+    .answercontainerright {
+      h3{font-size: 16px; font-family: @DIN-Pro;}
+      .seasonselecter {
+        clear: both;
+        a {
+          &.chargesummer,
+          &.chargewinter {color: @blueHyundai; border:solid 1px @blueHyundai; padding: 1rem; width: 50%; display: block;text-align: center;margin: 1rem 0 3rem;float: left;}
+          &.selected {color: white; background-color: @blueHyundai;}
+        }
+      }
+      div {
+        margin: 2rem 0;
+        img{margin-bottom: 1rem;background: #fff url(../imgs/px.png)repeat-x left bottom}
+        p{font-size: 16px;}
+        p.tripsnumber {
+          font-size: 32px; line-height: 2rem;
+          span {font-size: 16px;}
+        }
+        .carjourney span{display: block;width: 103px;height: 37px; position:absolute;right:0;padding-top: 40px;}
+        .cardata {
+          width: 20%; float: left; margin-bottom:0;
+          p{margin-bottom: 0;}
+        }
+        &.carcomparison {display: flex;align-items: stretch;margin: 0;clear: both;}
+        .carjourney{width: 80%;display: flex;margin: 0;}
+        .carjourneycontainer{width: 100%;display: flex;}
+        .carjourneyfill {background: linear-gradient(270deg, rgba(0,0,0,0.6) 0, rgba(255,255,255,0) 100%);height: 1px;align-self: center;}
+        .fillhyundai {background: linear-gradient(270deg, rgba(62,195,222,0.6) 0, rgba(62,195,222,0) 100%)}
+        .cardata{width: 20%;font-size: 48px;text-align: center;color:#3EC3DE; align-self: center;}
+        .carjourneyimg {
+          width: 50px;
+          p{height:40px;text-align: center;padding-top:50px;color:#3EC3DE;font-family:@DIN-Pro;font-size:16px;margin-bottom: 0;background-size: 100%; background-position-y: 0; background-repeat:  no-repeat;}
+        }
+        &.car_ioniqElectric {
+          .carjourneyimg p{background-image: url(../imgs/car_ioniqElectric.png);}
+        }
+        &.car_BMWi3 {
+          .carjourneyimg p{background-image: url(../imgs/car_BMWi3.png);}
+        }
+        &.car_nissanLeaf {
+          .carjourneyimg p{background-image: url(../imgs/car_nissanLeaf.png);}
+        }
+        &.car_fordFocus {
+          .carjourneyimg p{background-image: url(../imgs/car_fordFocus.png);}
+        }
+        &.car_ioniqPlugIn {
+          .carjourneyimg p{background-image: url(../imgs/car_ioniqPlugIn.png);}
+        }
+        &.car_fordFusion {
+          .carjourneyimg p{background-image: url(../imgs/car_fordFusion.png);}
+        }
+        &.car_toyotaPrius {
+          .carjourneyimg p{background-image: url(../imgs/car_toyotaPrius.png);}
+        }
+        &.car_chevyVolt {
+          .carjourneyimg p{background-image: url(../imgs/car_chevyVolt.png);}
+        }
+        &.car_ioniqHybrid {
+          .carjourneyimg p{background-image: url(../imgs/car_ioniqHybrid.png);}
+        }
+        &.car_fordCMAX {
+          .carjourneyimg p{background-image: url(../imgs/car_fordCMAX.png);}
+        }
+      }
+    }
+  }
+}
+.quizplanningstyleA{background: #E8EBEC;}
+.quizplanningstyleB .answercontainer {
+  .imganswer {
+    display: flex;align-items: flex-end;background: rgba(0, 0, 0, .6);padding: 0;
+    > div {background-color: rgba(0,0,0,0.6); height: 100%; padding: 10rem 1rem 1rem 1rem;min-height: 245px;}
+    p{color: #fff;}
+    h3{font-size: 16px; color: #fff;font-family: @DIN-Pro;}
+  }
+}
+.quizplanningstyleB {
+  .quizfirstanswer .container .answercontainer .answercontainerright{
+    /* Planning option Mobile 1*/
+    .imganswer {background: url(../imgs/img_planner_mobile_01.jpg) no-repeat center center; background-size:auto 100%;}
+    /* Planning option Mobile 2*/
+    &.half .imganswer {background: url(../imgs/img_planner_mobile_02.jpg) no-repeat center center; background-size:auto 100%;}
+    /* Planning option Mobile 3*/
+    &.spontaneous .imganswer {background: url(../imgs/img_planner_mobile_03.jpg) no-repeat center center; background-size:auto 100%;}
+  }
+}
+
+.quizcharginphoneB {
+  .container .answercontainer {
+    #optionselectorcontainer {}
+    .answercontainerleft {
+      /* Planning option Charging 1 left */
+      height: 166px; background: url(../imgs/img_charge_shocase1.jpg) no-repeat center center; background-size:100% auto;
+      .imganswer {background: rgba(0,0,0,.3);height: 100%;}
+      /* Planning option Charging 2 left */
+      &.day {background: url(../imgs/img_charge2.jpg) no-repeat center center; background-size:100% auto;}
+      /* Planning option Charging 3 left */
+      &.differs{background: url(../imgs/img_charge4.jpg) no-repeat center center; background-size:100% auto;}
+    }
+    .answercontainerright {
+      /* Planning option Charging 1 right */
+      height: 166px; background: url(../imgs/img_charge1.jpg) no-repeat center center; background-size:100% auto;
+      .imganswer {background: rgba(0,0,0,.3);height: 100%;position:relative;}
+      svg {z-index: 999; top: -50%;position: absolute; top:-80px;left: 50%; margin-left: -48px;
+              &.svg_left{margin-left: -115px}
+              &.svg_right{margin-left: 20px}
+      }
+      h4 {color: #fff;font-size: 14px; text-align: center; margin-top: 3rem;font-family: @DIN-Pro;position: absolute; top:2rem;padding: 0 6rem;}
+      /* Planning option Charging 2 left */
+      &.day {
+        background: url(../imgs/7e.jpg) no-repeat center center; background-size:100% auto;
+        .overnight{display: none;}
+        svg.day {
+          display: block !important; left:100px;
+          + svg.day {left: 245px;}
+        }
+        h4.day{display: block !important;}
+
+      }
+      /* Planning option Charging 3 left */
+      &.differs {
+        background: url(../imgs/img_charge6.jpg) no-repeat center center; background-size:100% auto;
+        .overnight{display: none;}
+        .differs {display: block !important;}
+      }
+    }
+  }
+}
+.container.Test-drive{
+  margin-top: 0px;padding: 0;position: relative;height: 580px;
+  > div {width: 100%;}
+}
+#bgvideo {position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+//    background: url(polina.jpg) no-repeat;
+    background-size: cover; }
+#test-drive{
+  height: 100%;background: rgba(0,0,0,.5);position: absolute;width: 100%; top:0;
+  padding-top: 10rem;
+  &.quiz-again{
+    background: rgb(249, 249, 249);
+    h2{color:black;margin: 1em auto 1rem auto;}
+    h3{color: #8C8C8C;}
+    ul{
+      background: rgb(249, 249, 249);
+//      padding: 0;
+      bottom: 91px;
+//      padding-bottom: 0rem;
+    }
+    a.test-drive-button {bottom:30px;}
+  }
+  h2{color:#fff;text-align: center;font-size: 24px;margin: 4rem auto 1rem auto; font-family: @head-light;}
+  h3{color: #fff; text-align: center;font-size: 16px;margin: 1rem auto 0 auto; font-family: @DIN-Pro;}
+  ul {
+    background-color: rgba(255,255,255,.88);text-align: center;position: absolute;bottom:0px;padding-bottom: 7rem;margin-bottom: 0;margin-left: 0;
+    li{
+      padding: 0;width: 32%;margin-top: -30px;
+/*      a + img {width: 70%;margin-bottom: 0;}*/
+      a + img {margin-bottom: 0;}
+      img {max-width: 100%; margin: 1rem auto;}
+      h4 {color: #3EC3DE;font-size: 24px; font-family: @head-light;}
+    }
+  }
+  a.viewcar {
+    display: block;height: 100%; width: 100%;position: relative;
+    /*&:hover .resalte{width: 100%;height: 100%;position: absolute;top: 0;left: 0;background:rgba(255,255,255,0.7)}*/
+  }
+  a.test-drive-button {
+    display:block;background-color: #3EC3DE;color: #fff; font-size: 16px; padding: 2rem; text-align: center;width: 80%; position: absolute;left:40%; margin-left:-30%;bottom:-30px;
+    &:hover {opacity: .8;border:none; text-decoration: none;}
+  }
+  a.discover-ioniq {
+    display:block;color:#fff; text-align: center; margin: 1rem auto; font-family: @head-light; font-size: 16px;
+    &:hover {opacity: .8; text-decoration: none;}
+  }
+  span.glyphicon {color: #fff; font-size:30px;margin-bottom: 3rem;}
+}
+#takethequiz {
+  h2 {font-size: 24px; color: #3EC3DE;margin-top: 6rem;margin-bottom: 2rem; font-family: @head-light;}
+  a:hover{text-decoration: none;}
+  h3 {
+    font-size: 18px; color: #fff; font-family: @head-light;width: 100%;height: 100%; padding: 2rem; margin: 0;background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(255,255,255,0) 100%);
+    &:hover {background: linear-gradient(180deg, rgba(62,195,222,0.3) 0%, rgba(62,195,222,0.7) 100%);}
+  }
+  .quizelement {
+    height: 120px;margin: 1rem auto; background-repeat: no-repeat;background-position: center center;background-size: 100%;border-top: 2px solid #3EC3DE;
+    &1 {
+      background-image: url(../imgs/bck_which_ioniq_01.jpg); background-position:center -170px;
+      &.completed {background-image: url(../imgs/bck_which_ioniq_01_completed.jpg);}
+    }
+    &2 {
+      background-image: url(../imgs/bck_which_ioniq_02.jpg); background-position:center -170px;
+      &.completed {background-image: url(../imgs/bck_which_ioniq_02_completed.jpg);}
+    }
+    &3 {
+      background-image: url(../imgs/bck_which_ioniq_03.jpg); background-position:center -170px;
+      &.completed {background-image: url(../imgs/bck_which_ioniq_03_completed.jpg);}
+    }
+    &4 {
+      background-image: url(../imgs/bck_which_ioniq_04.jpg); background-position:center -170px;
+      &.completed {background-image: url(../imgs/bck_which_ioniq_04_completed.jpg);}
+    }
+    &5 {
+      background-image: url(../imgs/bck_which_ioniq_05.jpg); background-position:center -170px;
+      &.completed {background-image: url(../imgs/bck_which_ioniq_05_completed.jpg);}
+    }
+    &.completed {
+//      &::after {content:" "; background: url(../imgs/Shape.png) no-repeat center center; background-size:60%; display:block; width:64px; height:64px; margin:0 auto;}
+    }
+  }
+  a.generate-summary {
+    display:block; background-color: #3EC3DE; color: #fff; font-size: 18px; padding: 2rem; text-align:center; font-family: @head-light;
+    &:hover {opacity: .8; text-decoration: none;}
+  }
+}
+div.subr {background-color: #3EC3DE;height: 1px; width: 100px;margin: 2rem 0 4rem;}
+div.sub {margin: 2rem 0 4rem;}
+#learnmore {
+  h2 {font-size: 24px; color: #3EC3DE;margin-top: 4rem;margin-bottom: 2rem; font-family: @head-light;}
+  .learnmoreelements {
+    .learnmoreelement {
+//      min-height: 270px; margin:0; padding: 0;border-top:2px solid #3EC3DE;
+      a{height: 270px;display: block;line-height: 20px;margin-top: -2px;}
+      a:hover {text-decoration: none;}
+      h3 {
+        font-size: 18px;color: #fff;width: 100%; height: 100%;padding: 2rem;background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(255,255,255,0) 100%); margin-top: 0;
+        &:hover {background:linear-gradient(180deg, rgba(62,195,222,0.3) 0, rgba(62,195,222,0.7) 100%);}
+      }
+      &.learnmoreelementdesign {background: url(../imgs/img_details_nofill1.jpg) no-repeat;background-size:100% 100%; width:45%;}
+      &.learnmoreelementbluedrive {background: url(../imgs/img_details_nofill2.jpg) no-repeat;background-size:100% 100%; width:45%;}
+      &.learnmoreelementbattery {background: url(../imgs/img_details_nofill3.jpg) no-repeat;background-size:100% 100%; width:45%;}
+      &.learnmoreelementcost {background: url(../imgs/img_details_nofill4.jpg) no-repeat;background-size:100% 100%; width:45%;}
+      //&.learnmoreelementdesign {background: url(../imgs/img_details_nofill1.jpg) no-repeat;background-size:auto 100%; width:45%;}
+      //&.learnmoreelementbluedrive {background: url(../imgs/img_details_nofill2.jpg) no-repeat;background-size:auto 100%; width:45%;}
+      //&.learnmoreelementbattery {background: url(../imgs/img_details_nofill3.jpg) no-repeat;background-size:auto 100%; width:45%;}
+      //&.learnmoreelementcost {background: url(../imgs/img_details_nofill4.jpg) no-repeat;background-size:auto 100%; width:45%;}
+    }
+  }
+}
+.margin-container-learn-more{margin-bottom: 17px;}
+#videos{
+  h2 {font-size: 24px; color: #3EC3DE;margin-top: 4rem;margin-bottom: 2rem; font-family: @head-light;}
+  h3 {font-size: 18px; color: #fff; font-family: @head-light;width: 100%;height: 100%; padding: 2rem; margin: 0;}
+  .videoelements {
+    .videoelement {
+      background:#505050 url(../imgs/ic_play.png) no-repeat center center;min-height: 190px; display:flex;
+      p {text-align: center; color: #fff; align-self: flex-end; font-size: 30px; font-family: @head-light; margin:1rem auto;}
+      &1 {background: url(../imgs/Video-1.png) no-repeat center center; background-size:100%;}
+      &2 {background: url(../imgs/Video-2.png) no-repeat center center; background-size:100%;}
+      &3 {background: url(../imgs/Video-3.png) no-repeat center center; background-size:100%;}
+    }
+  }
+}
+
+#summary-report{
+  background: #F0F0F0; font-family: @head-light;
+/*
+  .col-xs-12{
+    background: #E8EBEC;
+  }
+*/
+  .quizfirstanswer{
+    margin-top:60px;
+    .container {
+      background: #fff;
+      padding-left: 0px; padding-right: 0px;
+      .closesummary::before{content: ""; background: url(../imgs/ic_close.png) no-repeat center center; width:24px; height:24px; display:block; float:right; padding:15px;}
+      h2 {
+        font-size: 32px; color: @blueHyundai; border:none;font-family: @head-light;text-align: center;
+        &::after{background: none;}
+      }
+      h3 {font-size: 18px; color: #000; text-align: center;font-family:@head-light;}
+      hr{border-color: @blueHyundai;width: 60%;}
+      .summaryreportcontainer {
+        div.sumaryreportsec1{
+          background: url(../imgs/summary-img.jpg) no-repeat center top; background-size:auto 100%;height:314px;
+          > div{width: 100%; height: 100%;background-color:rgba(0,0,0,.45);display: flex;align-items: center;}
+          h2{color: #fff;font-size: 32px;text-align: center;font-family: @DIN-Pro;padding-left: 2rem;padding-right: 2rem;}
+          h3{color: white;font-size: 18px;text-align: center;font-family: @head-light;}
+        }
+        .summarycar {
+          background-color: #E0FAFF;margin-top: 60px;
+          div{background: no-repeat center center;}
+          img{margin-top: -40px;width: 80%;}
+          img.Ioniqsummarylogo{width: inherit;margin:0;}
+          h3{color: #3EC3DE;font-size: 24px;}
+          p{font-size: 18px; font-family: @head-light;padding: 1rem 3rem;}
+        }
+        .summarycarstoryHead {
+          margin: 2rem 0 0 3rem;
+          //height: 200px;
+//          background: url(../imgs/2017-Hyundai-Ioniq-Electric.png) no-repeat;
+          background-position: -50% center;display:flex; align-items:flex-start;
+          h3{font-size: 32px; color: #3EC3DE;font-family:@head-light; text-align: left;}
+//          hr{border-color:#3EC3DE;width: 80px;float: left; margin: 0;}
+        }
+
+        .summarycarstory0,.summarycarstory1 {
+          div{
+            margin: 4rem 1rem;
+            h3{font-size:32px; color: #000; font-family: Hyundai Sans Head Light; text-align: left;}
+            p{color: #8C8C8C;font-size: 18px;font-family: @head-light;}
+          }
+          div+div{margin: 0rem; height: 340px;background: url(../imgs/summary_img02.jpg) no-repeat;background-position: center center; background-size: 100%;}
+        }
+
+
+/*
+        .summarycarstory0 {
+          div{
+            margin: 4rem 1rem;
+            h3{font-size:32px; color: #000; font-family: Hyundai Sans Head Light; text-align: left;}
+            p{color: #8C8C8C;font-size: 18px;font-family: @head-light;}
+          }
+          div+div{height: 340px;background: url(../imgs/summary_img02.jpg) no-repeat;background-position: center center; background-size: 100%;}
+        }
+        .summarycarstory1 {
+          div{
+            margin: 4rem 1rem;
+            h3{font-size:32px; color: #000; font-family: Hyundai Sans Head Light; text-align: left;}
+            p{color: #8C8C8C;font-size: 18px;font-family: @head-light;}
+          }
+          div+div{height: 340px;background: url(../imgs/summary_img03.png) no-repeat;background-position:center center; background-size: 100%;}
+        }
+*/
+
+       h3.experiencetitle {
+          color: @blueHyundai;font-size: 32px;text-align: left;margin-bottom: 4rem;
+          +hr{border-color: @blueHyundai;text-align: left;margin-left: 0;width: 80px;}
+        }
+        .summaryexperience{
+          margin: 2rem 0;
+//          height: 575px;
+          div{ text-align: center;}
+          div+div{
+            width: 100%;
+            h3 {text-align: center;}
+          }
+          img{width: 70%;display:inline-block;}
+        }
+        .summaryschedule{
+          margin: 2rem;
+          margin-bottom: 6rem;
+          h2{font-size: 32px; color: #3EC3DE;font-family:@head-light; text-align: center;}
+          h3{color: #000;font-family: @DIN-Pro;font-size: 32px;text-align: left;margin-bottom: 0;padding: 0; padding-bottom: 5rem;  }
+          h4{color: #8C8C8C; font-family: @head-light;font-size: 18px;text-align: left;margin-bottom: 5rem;}
+          p{color: #000;font-family: @DIN-Pro;font-size: 16px;text-align: left;}
+          a.link{text-decoration:underline;text-align: left;display: block;margin: 1rem 0;}
+        }
+        .summaryreportcontainerbottom{
+          margin :2rem;
+          p{color: #000000;font-family: @DIN-Pro;font-size: 24px;}
+          p+p{color: #8C8C8C; font-family: @DIN-Pro;font-size: 16px;}
+        }
+        .summaryprimarybutton{display: block;color: #fff; background: @blueHyundai; padding: 2rem;margin-bottom: 1rem; font-size: 16px;font-family: @DIN-Pro;text-align: center;}
+        .summarysecondbutton{display:block;color: @blueHyundai; border:solid 1px @blueHyundai; padding: 1rem;margin-bottom: 1rem;font-size: 16px;font-family: @DIN-Pro;}
+        .summaryreportcontainerright{
+          h3{
+            font-size: 32px; color: @blueHyundai;
+            &.carmodel{background: url(../imgs/IONIQ.png)no-repeat left top;padding-left:125px;display:inline-block;font-family:@head-light;}
+            &.price{font-size: 48px; color: #000; font-family: @head-regular;}
+            span{text-indent: -5000px;}
+          }
+          div.summaryimg1 {
+            background: url(../imgs/img_summary_learmore_big.png) no-repeat center center; background-size:100%;height:125px;margin:1rem 0;
+            span{content: " "; display: block;width:100%; height: 100%; background: rgba(255,255,255,0.8);text-align: right; padding: 4rem 1rem;}
+          }
+          div.summaryimg2 {
+            background: url(../imgs/img_summary_costs_big.png) no-repeat center center; background-size:100%;height:125px; margin:1rem 0;
+            span{content: " "; display: block;width:100%; height: 100%; background: rgba(255,255,255,0.8);text-align: right; padding: 4rem 1rem;}
+          }
+          p{
+            color: #8c8c8c; font-size: 16px;font-family: @DIN-Pro;
+            &.summaryshare {color: #000; font-family: @DIN-Pro;font-size: 16px;}
+          }
+          .summaryRRSS {
+            display: flex;justify-content: space-around;margin: 2rem 6rem;
+            span {display: none}
+            .summaryFB {background: url(../imgs/facebook.png) no-repeat center center;width:32px; height:31px; display:block;}
+            .summaryTW {background: url(../imgs/twitter.png) no-repeat center center;width:32px; height:31px; display:block;}
+            .summaryEM {background: url(../imgs/ic_email.png) no-repeat center center;width:32px; height:31px; display:block;}
+          }
+        }
+        hr {
+			&.grey_border_color{border-color:#87888C};
+			margin:4rem auto;}
+        .summaryreportcontainerleft{
+          h3{font-size: 16px;text-align: center; font-family: @DIN-Pro;}
+          #optionselectorbullets{margin:0 4rem;}
+          #optionselector li {width: 33%}
+          ul{margin:1rem 0rem;}
+          li{
+            padding: 0;background: #fff;
+            a{color: @blueHyundai}
+            span {font-size:14px;font-family:@DIN-Pro;text-align: center;padding: 0 1rem;}
+          }
+          span.resumerummarycar {color:#8C8C8C;text-align: center; font-size: 16px;display:block;margin:1rem auto 4rem auto}
+        }
+        .summaryreportcontainerbottom{
+          .logomyhyundai {display: block;margin: 1rem auto;}
+          .summarysaveprogress {color: #000;font-family: @DIN-Pro;font-size: 24px;text-align: center;}
+          .summarysaveprogressexp {color: #8c8c8c; font-size: 16px; font-family:@DIN-Pro;text-align: center;}
+          .bluelinktitle {color: #000; font-size: 24px; font-family: @DIN-Pro;margin: 1rem}
+          .bluelinktext {color: #8c8c8c; font-size: 16px; font-family: @DIN-Pro;margin: 1rem}
+          .bluelinklearnmore {color:#3EC3DE; margin:1rem 1rem 3rem;font-size: 16px;}
+        }
+      }
+    }
+  }
+}
+
+
+.chargingoB{
+  background: #E8EBEC;
+  .quizfirstanswer .container .answercontainer .answercontainerright {background: url(../imgs/map.png) no-repeat center bottom; background-size:100%; min-height:340px;}
+  p {color: #8C8C8C;font-size: 16px;font-family: @DIN-Pro;}
+  input{border:1px solid #8C8C8C;font-family: @DIN-Pro;padding: 1rem; width: 100%;}
+  h3{color:#3EC3DE;font-size: 24px;font-family: @DIN-Pro;}
+  h3+p{color: #8c8c8c;font-family: @DIN-Pro;}
+  div.inputmapdata{display: flex;flex-direction: column;}
+}
+.containerbluedriveleft {
+  background-size: auto 100%;background-position: center center;height: 350px;padding: 0rem;background-repeat: no-repeat;
+  h2{font-size: 32px; color: #000;font-family: @DIN-Pro}
+  h3{font-size: 16px; color: #000;font-family: @DIN-Pro}
+  div{background: linear-gradient(180deg, #FFFFFF 0%, rgba(255,255,255,0) 100%);width: 100%;height: 100%; padding:1rem;}
+}
+
+.learn-more-blue-drive {
+  background: #F0F0F0;
+  .containerbluedriveleft {background-image: url(../imgs/img_learmore_s1.jpg);}
+  a.navigationprev {display: block;position: absolute;/*left: -10px;*/ top: 30%; background: url(../imgs/ic_arrow_prev.png) no-repeat center center; width:50px; height:50px;margin-top:-25px;z-index:10;}
+  a.navigationnext {display: block;position: absolute;/*right: 10px;*/ top: 30%; background: url(../imgs/ic_arrow_next.png) no-repeat center center; width:50px; height:50px;margin-top:-25px;z-index:10;}
+}
+#learnmorebluedrive {
+  margin: 1rem 0;margin-bottom: 0;background: #fff;flex-wrap: wrap;
+  .learnmorecontainer {display: flex;flex-wrap: wrap;justify-content: space-between;}
+  .otherlearn {
+    margin-bottom: 16px;width: 48%;float: left;border-top: 1px solid @blueHyundai;height: 260px;
+    p{padding: 16px;height: 100%;font-size: 24px;font-family: @DIN-Pro;color: #fff;background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(255,255,255,0) 100%);}
+    &.current p{background-color: #3EC3DE;opacity: .5}
+  }
+  .otherdesign{background: url(../imgs/img_details_nofill1.jpg) no-repeat center center; background-size:100%}
+  .otherbluedrive{background: url(../imgs/img_details_nofill2.jpg) no-repeat center center; background-size:100%}
+  .otherbattery{background: url(../imgs/img_details_nofill3.jpg) no-repeat center center; background-size:100%}
+  .othersavings {background: url(../imgs/img_details_nofill4.jpg) no-repeat center center; background-size:100%}
+}
+.learn-more-saving-A,
+.learn-more-saving-B {
+  .blue-drive{
+    .containerbluedriveleft {
+      background-image: url(../imgs/img_learmore_s4.jpg);
+      div:first-child{width: 100%; height: 100%;display: flex;flex-direction: column;padding: 0;}
+      div div:first-child {align-self: flex-start;padding: 1rem;}
+      div div:last-child{
+        background: rgba(0,0,0,.5);align-self: flex-end;height:150px;
+        p{color: #fff;font-size: 16px;font-family: @DIN-Pro;}
+        a{color: #fff;text-decoration: underline;}
+      }
+    }
+    .containerbluedriveright {
+      .HyundaiSelectCar{width: 50%;border-right: 1px solid #c0c1c5;}
+      .dropdown{
+        border: solid 1px @blueHyundai;padding: 1rem ; width: 90%; margin: 0 auto 1rem auto;
+        a {
+          color: @blueHyundai; text-decoration: none;font-size: 14px;font-family: @DIN-Pro;display: flex;justify-content: space-between;
+          span {font-size: 20px;}
+        }
+        ul.dropdown-menu {
+          width: 100%; border-radius: 0;
+          li {color: @blueHyundai;padding: 1rem;}
+        }
+      }
+      #comparison {
+        position: relative;
+        a.addcarcomparison {background: url(../imgs/ic_more.png) no-repeat center center; position:absolute;top:60px; right:0;height:32px; width:32px;}
+        .comparisondata p:nth-child(2) {font-size: 18px;}
+      }
+      .fuelcostmessage p{font-family: @DIN-Pro;font-size: 14px;}
+    }
+  }
+}
+h2.learn-more-title-right{font-size:24px; font-family: @DIN-Pro; text-align: center;padding: 0 2rem;}
+.learn-more-blue-drive,
+.learn-more-saving-A,
+.learn-more-saving-B {
+  background: #F0F0F0;
+  a.navigationprev {display: block;position: absolute;left:0; top: 30%; background: url(../imgs/ic_arrow_prev.png) no-repeat center center; width:50px; height:50px;margin-top:-25px;z-index:999;}
+  a.navigationnext {display: block;position: absolute;right:0; top: 30%; background: url(../imgs/ic_arrow_next.png) no-repeat center center; width:50px; height:50px;margin-top:-25px;z-index:999;}
+  .blue-drive {
+    margin-top: 60px;background: #fff;
+    .containerbluedriveright {
+      background: white;padding-bottom: 1rem;
+      #carousel-example-car1, #carousel-example-car2 {
+        width: 80%; margin: 1rem auto;
+        .carousel-inner {
+          img {margin:0 auto;}
+          .carousel-caption{
+            position:inherit;right: inherit;bottom: inherit;left: inherit;text-shadow:none; width: 100%;
+            p {
+              font-size: 16px; color: #000;font-family: @DIN-Pro;
+              span{font-size: 20px; color: @blueHyundai; font-family: @DIN-Pro;}
+            }
+          }
+        }
+        .carousel-control {
+          background: none; opacity: 1; text-shadow: none;
+          span {color: @blueHyundai;top:20%;}
+        }
+      }
+      .bluedrivedata{
+        p{
+          color: @blueHyundai;font-size: 14px;font-family: @DIN-Pro;float: left;
+          span{font-size: 72px;}
+        }
+        p:nth-child(2){
+          float: right;
+          color: #8c8c8c;font-size: 16px;
+          span{font-size: 72px;}
+        }
+      }
+      .bluedrivetrees {
+        margin-bottom: 3rem;float: left;
+        img {display: block;float: left;margin:5px;}
+        &.line1 {min-height: 20px;}
+        &.line2 {min-height: 40px;}
+        &.line3 {min-height: 60px;}
+        &.line4 {min-height: 80px;}
+        &.line5 {min-height: 100px;}
+        &.line6 {min-height: 120px;}
+        &.line7 {min-height: 140px;}
+      }
+    }
+  }
+}
+.select-saving-A{
+    margin-bottom: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    .selectBlue {
+        border: 1px solid #3EC3DE;
+        border-bottom: none;
+        width: 75%;
+        margin: 0 auto;
+        text-align: center;
+        background-color: white;
+        cursor: pointer;
+            .name-car{
+				font-family: Hyundai Sans Head Light;
+				color: #3EC3DE;
+				font-size: 15px;
+				padding-top: 3px;
+				padding-bottom: 3px;
+				padding-left: 3px;
+				margin-bottom: 0px;
+            }
+    }
+    .selectBlue.active{
+            i.i-arrow{
+                background: url(../imgs/shape_1.png) no-repeat;
+				background-size: 100%;
+                display: inline-block;
+                cursor: pointer;
+                width: 12px;
+                height: 10px;
+                margin: 10px 2px 3px 4px;
+                float: right;
+
+            }
+    }
+    .selectBlue:last-child { border-bottom: 1px solid #3EC3DE; }
+}
+
+
+
+.learn-more-blue-drive,
+.learn-more-design,
+.learn-more-battery,
+.learn-more-saving-A,
+.learn-more-saving-B {
+  > div {background: #fff;}
+  .closelearnmore::before{content: ""; background: url(../imgs/ic_close.png) no-repeat center center; width:24px; height:24px; display:block; float:right; margin-right: 20px;}
+}
+
+.learn-more-saving-A {
+  .blue-drive .containerbluedriveright {
+    #carousel-example-car1, #carousel-example-car2 {
+      width: 50%;float: left;border-right: 1px solid #c0c1c5;
+      .item {
+        img{width:60%;margin: 0 auto;}
+        p.saved span{font-size: 24px;font-family: @head-light;}
+      }
+    }
+    #Hyundaicomparison {
+      width: 50%;float:left;margin: 1rem auto;
+    }
+    #comparison {
+      width: 50%;float: left;margin: 1rem auto;
+     .line-center {border-right: 1px solid #c0c1c5;}
+        .select-relative{position: relative;}
+      img {margin: 0 auto;height: auto;padding-top: 60px;}
+//      img {margin: 0 auto;width: 100%;max-width: 140px;height: auto;padding-top: 60px;}
+      .comparisondata {
+        padding: 0px 0;
+        p {
+          font-size: 16px; color: #000; font-family: @head-light;text-align: center;
+          span{color: @blueHyundai;}
+          &.saved{color: #8C8C8C;font-size: 24px;}
+          &.saved-A{color: #3EC3DE;font-size: 24px;}
+          }
+        a.entercurrentcar {color: @blueHyundai;text-align: center;text-decoration: underline;display: block;}
+      }
+    }
+    .fuelcostmessage {color:#87888C;font-size: 14px; text-align: center;clear: both;display: block;}
+  }
+}
+.learn-more-saving-B{
+  #aboutyourcar {
+    h3{font-size: 24px;color: #000;font-family: @head-light;}
+    select.form-control{border:solid 1px #3EC3DE; border-radius: 0; font-size: 16px;font-family: @head-light;min-height: 52px;margin:2rem auto;}
+  }
+  #aboutyourcarbuttons{
+    display: flex; justify-content: space-between; margin-bottom: 1rem;
+    button.nocar {font-family: @head-light;font-size: 16px;color: #fff; background: #8C8C8C; display: block;border:none;padding: 1rem;width: 45%}
+    button.submitcar{font-family: @head-light;font-size: 16px;color: #fff; background: #3EC3DE; display: block;border:none; padding: 1rem;width: 45%}
+  }
+}
+.learn-more-design {
+  background: #F0F0F0;
+  .blue-drive{background: #fff;margin-top: 60px;}
+  .containerbluedriveleft {background-image: url(../imgs/img_learmore_s2.jpg);}
+}
+.learn-more-battery {
+  background: #F0F0F0;
+  .blue-drive{background: #fff;margin-top: 60px;}
+  .containerbluedriveleft {background-image: url(../imgs/img_learmore_s3.jpg);}
+}
+.containerbluedriveleft {
+  background-size:auto 100%;height:350px;
+  div{background:linear-gradient(180deg, #FFFFFF 0, rgba(255,255,255,0) 100%);width:100%;height: 100%;padding: 1rem;}
+}
+.containerbluedriveright {
+  h2 + p {font-size: 14px; color: #8C8C8C;}
+}
+.design-features {
+  .feature{
+    display: flex;align-items: center;margin: 5rem 2rem;
+    img{margin: 0 1rem;max-width: 50px;}
+    p{font-size: 14px; color: #8C8C8C;margin: 0 1rem;}
+  }
+}
+.learn-more-title-right {font-size: 16px; font-family: @DIN-Pro;}
+.learn-more-title{font-size: 32px;color: #000;font-family: @DIN-Pro}
+.learn-more-subt{font-size: 16px;color: #000;font-family: @DIN-Pro}
+#footer {
+  margin: 1rem
+  0 0 0; margin-top: 0; padding: 15px 0;
+  .container {margin: 0 auto;}
+  hr {border-color: #BEBEBE;}
+    .col-xs-12 {background: #fff;}
+  div+div {
+    .col-xs-12 {background: #fff;}
+  }
+  #RRSS {
+    display: flex;justify-content: space-around;padding: 4rem 0 2rem;
+    img {
+      align-self: center;
+      &.ico-footer{
+        &-facebook {height: 24px;}
+        &-twitter {height: 24px;}
+        &-instagram{height: 24px;}
+        &-youtube {height: 24px;}
+        &-email{height: 24px;}
+      }
+    }
+  }
+  #logohyundai {padding: 4rem 0;}
+  p {color: #BEBEBE;font-size: 12px; font-family: @DIN-Pro; text-align: center;}
+  #footerlinks {
+    display: flex; justify-content: space-around;
+    padding: 4rem;
+    ul{
+      list-style-type: none; padding: 0;
+      a {color: #8c8c8c;font-size: 12px;display: block;margin: 2rem auto; font-family: @DIN-Pro}
+    }
+  }
+  #legalmessage{
+    background: #fff;
+    padding: 4rem 1rem 2rem 1rem; font-family: @head-light;
+    p{text-align: left;}
+  }
+}
+
+.modal-content {border-radius: 0;}
+.close {color: @blueHyundai;}
+#modalcar1, #modalcar2, #modalcar3 {
+  h2 {color: #3EC3DE; font-family: @DIN-Pro; margin-bottom: 6rem;}
+  p {font-family: @DIN-Pro;color: #000;font-size: 24px;text-align:center;}
+  p + p {color: #8c8c8c;font-size: 16px;}
+  a{background: #3EC3DE; color: #fff;padding: 1rem 5rem;margin: 3rem auto;display: block;width: 50%;}
+  .modalcar {margin-bottom: 3rem;}
+}
+.modal {
+	.modal-header {
+		border-bottom: none;
+	}
+	.modal-body {
+		position: relative;
+	}
+	h2 {
+		@font-family: @DIN-Pro;
+		color: #000;
+		font-size: 24px;
+		text-align: left;
+	}
+	p {
+		@font-family: @DIN-Pro;
+		color: #8C8C8C;
+		font-size: 16px;
+		text-align: left;
+	}
+	input {
+		display: block;
+		width: 100%;
+		border: 1px solid #8C8C8C;
+		box-shadow: none;
+		padding: 2rem;
+		margin-bottom: 2rem;
+	}
+	a.notnow {
+		display: block;
+		font-family: @DIN-Pro;
+		background-color: #8C8C8C;
+		color: #fff;
+		font-size: 16px;
+		padding: 2rem;
+		margin-bottom: 2rem;
+		text-align: center;
+	}
+	a.submit {
+		display: block;
+		font-family: @DIN-Pro;
+		background-color: @blueHyundai;
+		color: #fff;
+		font-size: 16px;
+		padding: 2rem;
+		margin-bottom: 2rem;
+		text-align: center;
+	}
+	img.back01 {
+		position: relative;
+		width: 100%;
+	}
+	img.back02 {
+		position: absolute;
+		bottom: 0;
+		z-index: 2;
+		width: 100px;
+		right: 20px;
+	}
+}
+@media screen and (min-width: 1024px) {
+	.modal_info {
+		.close {
+			margin-top: -80px;
+			margin-right: -40px;
+		}
+		.modal-content {
+			border-radius: 0;
+			padding: 100px 60px;
+		}
+		.modal-header {
+			border-bottom: none;
+		}
+		.modal-body {
+			position: relative;
+		}
+		h2 {
+			@font-family: @DIN-Pro;
+			color: #000;
+			font-size: 24px;
+			text-align: left;
+		}
+		p {
+			@font-family: @DIN-Pro;
+			color: #8C8C8C;
+			font-size: 16px;
+			text-align: left;
+		}
+		input {
+			display: block;
+			width: 428px;
+			border: 1px solid #8C8C8C;
+			box-shadow: none;
+			padding: 2rem;
+			margin-bottom: 2rem;
+		}
+		a.notnow {
+			display: inline-block;
+			font-family: @DIN-Pro;
+			background-color: #8C8C8C;
+			color: #fff;
+			font-size: 16px;
+			padding: 2rem;
+			margin-bottom: 2rem;
+			text-align: center;
+			width: 22%;
+			margin-right: 6%;
+		}
+		a.submit {
+			display: inline-block;
+			width: 22%;
+			font-family: @DIN-Pro;
+			background-color: @blueHyundai;
+			color: #fff;
+			font-size: 16px;
+			padding: 2rem;
+			margin-bottom: 2rem;
+			text-align: center;
+		}
+		img.back01 {
+			position: absolute;
+			bottom: 0;
+			z-index: 1;
+			width: 375px;
+			left: inherit;
+			right: 0px;
+		}
+
+	}
+
+	.container.Test-drive {
+//		height: 680px;
+	}
+}
+
+.popover {
+  border-radius: 0; background-color: #3EC3DE;border: none;
+  &.bottom > .arrow:after{border-bottom-color: #3EC3DE;}
+  h3{background-color: inherit; color: #fff; font-family: @DIN-Pro;border-bottom:none;}
+  .popover-content {display: flex;justify-content: space-around;}
+  a{color: #fff;font-family: @DIN-Pro}
+}
+.learn-more-blue-drive-merge{
+  .learnmoreelements {
+    padding: 0; list-style-type: none;display: flex;flex-wrap: wrap;justify-content: space-around;
+    .learnmoreelement {margin-bottom: 1rem !important;}
+  }
+}
+.answercontainer {padding-bottom: 15px;}
+
+@media screen and  (max-width: 767px){
+  #modalcar1, #modalcar2, #modalcar3 {
+    .modalcar {width: 60%;}
+  }
+  #test-drive {
+	h2 {margin-top: 4rem;}
+    ul {
+      li {
+        a + img {
+          width: 75%;
+        }
+        h4 {font-size: 22px;}
+      }
+    }
+  }
+}
+
+.answercontainer {padding-bottom: 15px;}
+@media screen and (min-width: 360px) {
+}
+@media screen and (min-width: 768px) {
+  .header {
+    height: 85px;
+    .logocontainer{
+      width: 50%;height: 85px; display: flex;
+      h1 {background: url(../imgs/IONIQ.png) no-repeat center center; background-size:85%; height:48px;align-self:center;}
+      h2 {font-size:20px;color: #505050; align-self: center; margin:1rem;}
+    }
+    .iconscontainer {
+      display: flex; height: 85px; float: right; width: 50%;
+      a.location-icon {background: url(../imgs/location-icon.png) no-repeat center center; background-size:auto 33px;width:33px; height:33px; align-self:center;}
+      a.account-icon {border-left:1px solid #DBDBDB;background-size: 33px;}
+    }
+  }
+  .container#containerTheQuiz,
+  .container#containerLearnMore,
+  .container#containerVideo {
+    background: #fff;width: 100%;
+//    .row {width: 1024px;margin:0 auto;}
+    .row {width: 768px;margin:0 auto;}
+  }
+  .quizfirstanswer{
+    margin-top: 95px;position: relative;padding-left:0px;padding-right: 0px;
+    a.navigationprev {top:70%;left:-50px;}
+    a.navigationnext {top:70%;right:-50px;}
+    .container {
+      width:100%;
+      h2{display: block;font-size: 24px;}
+      .answercontainer {
+        display: flex; justify-content: space-between; padding-bottom: 15px;
+        .answer {
+          width:33%; min-height: 300px;background-size: auto 100%;
+          div{height: 100%;padding-top: 20rem;}
+        }
+      }
+    }
+    #quizmorequestions {
+      padding-bottom:2rem;margin: 1rem 1rem 0 1rem;
+      > .container { width: inherit;}
+      .otherquestioncontainer {
+        display: flex;
+        .otherquestion {
+          align-items: stretch; margin-bottom: 0; padding: 0 5px;
+          p{margin-bottom: 0;min-height: 100%;}
+        }
+        #quizgeneratesummary {
+          align-items: stretch;
+          a{margin: 1rem;}
+        }
+      }
+      ul#optionselectorbullets{background-color: #4EC7DF;}
+      ul#optionselector {width:50%;background-color: #4EC7DF;}
+    }
+    #footer {margin: 0 1rem;}
+  }
+
+  #quizgeneratesummary {width: 50%;margin:0 auto;}
+  .container.Test-drive {margin-top: 85px;width: 100%;  padding-top: 0;}
+  #bgvideo {/*position:relative;*/}
+  #Test-drive > div {}
+  #test-drive {
+    padding-top: 0;
+    ul{
+      width: 100%;margin:0 auto;padding: 0 2% 2rem 2%;
+      &.quiz-again {
+        padding: 0, 0, 91px, 0;
+      }
+      li {padding: 2rem;margin-top: -85px;}
+    }
+    h3 {font-size: 16px;margin-top: 1rem;font-family: @DIN-Pro;}
+    h2 {font-size: 48px;}
+    a.test-drive-button {width: 300px;font-size: 16px;left: 50%; margin-left: -150px;}
+    a.discover-ioniq {font-size: 20px;}
+  }
+  #learnmore {
+    .learnmoreelements {
+      width: 100% !important; padding: 0;
+      .learnmoreelement{
+        width: 25% !important;
+        h3 {font-size: 32px;}
+        &.learnmoreelement {
+          &design,
+          &bluedrive,
+          &battery,
+//          &cost{width: 24% !important; margin: 0 .5% !important;display: block;}
+          &cost{
+            width: 24% !important; margin: 0 .5% !important;display: block;background-size: 100%;
+            a{height: 100%;margin-top: 0;}
+          }
+        }
+      }
+    }
+  }
+
+  #learnmore,
+  #videos {
+    .videoelements {
+      display: flex;justify-content: space-between; width: 100% !important;padding: 0;
+      .videoelement {
+        width: 32%;
+        &:nth-child(1){display: flex;}
+        &:nth-child(2){display: flex;}
+        &:nth-child(3){display: flex;}
+        p {font-size:24px;}
+      }
+    }
+  }
+  #takethequiz {
+    .quizelement {
+      padding: 0; background-position: center center;
+      h3 {margin-bottom: 2rem;}
+      &.completed{}
+        a.generate-summary {width: 30%;}
+    }
+  }
+  .carousel-inner { display: flex;justify-content: space-between;}
+  .carousel-inner > item {display: block;}
+
+  .chargingoB {
+    .quizfirstanswer {
+      .container .answercontainer {
+        display: flex; align-items:stretch;
+        .answercontainerright {
+          background: url(../imgs/map-desktop.png) no-repeat center center; background-size:100%; float: left; width:50%;
+        }
+        .answercontainerleft {
+          width: 50%;float: left;display: flex; flex-direction: row;
+          ul#optionselectorbullets{
+            display: flex;flex-direction: column;justify-content: space-between;margin: 0;height: inherit;background: #4EC7DF;padding: 1rem;
+            li{display: block;padding: 1rem 0;}
+            li.selectbulletfill{width: 1px; background:#fff; height: 100%; margin-left: 13px;}
+            a{background: url(../imgs/ic_oval_outline_big_w.png); background-size:26px;}
+            .selected a{background: url(../imgs/ic_oval_outline_fill_big_w.png); background-size:26px;}
+          }
+          ul#optionselector {
+            display: flex; flex-direction: column;margin: 0;background: #4EC7DF;padding: 1rem;
+            li{width: 100%;text-align: left;padding: 1rem 0;}
+            li a {
+              text-align:left; color: #fff;font-size: 16px; font-family: @DIN-Pro;
+              span {text-align: left; font-size: 22px;}
+            }
+          }
+          .inputmapdata{padding: 2rem 3rem;width:80%;}
+        }
+      }
+    }
+  }
+  #summary-report {
+    .quizfirstanswer .container{
+      margin-top:95px; padding-left:0px; padding-right: 0px;
+      h2{font-size: 48px; font-family: @head-light;margin-top: 5rem;margin-bottom: 0;padding-bottom: 0;}
+      h3{font-size: 24px; color: #000;margin-top: 0;}
+      hr{width: 20%;margin-bottom:5rem;}
+      .share{
+        padding-bottom: 100px;
+        hr{width: 100%;}
+        a + a{margin-left: 40px;}
+        img {margin-top: 20px;}
+      }
+      .summaryreportcontainer {
+        div.sumaryreportsec1{
+          background-size: 100% auto;height: 245px;
+          div>div{
+            width: 100%;
+            h2{font-family: @DIN-Pro;font-size: 48px;color: #fff;margin-bottom: 1rem;margin-top: 1rem;}
+            h3{font-family: @head-light; font-size: 24px;color: #fff;}
+          }
+        }
+
+        .summarycarstoryHead{
+          background-position: right -150% center;background-size: 700px;align-items: flex-end;
+          h3{font-size: 48px;margin-bottom: 4rem;}
+//          hr{margin-left: 5rem;margin-bottom: 4rem;}
+        }
+
+        .summarycar{
+          margin-top: 100px;margin-bottom: 144px;padding-bottom: 3rem;
+          img{width: 40%;margin-bottom: 3rem;margin-left:auto;margin-right:auto;}
+          img.Ioniqsummarylogo {width: inherit;margin: inherit;}
+          p{font-size: 24px;}
+          h3 {font-size: 24px;}
+        }
+
+        .summarycarstory0,.summarycarstory1 {
+          height: 400px;display: flex; align-items: center;
+          div{
+            width: 50%;float: left;margin: 0;padding: 0 6rem;
+            h3{font-size: 48px;text-align: left;}
+            p{font-size: 24px}
+          }
+        }
+        .summarycarstory1{
+          div{order:2}
+          div+div{order:1}
+        }
+
+        h3.experiencetitle{
+          font-size: 48px;text-align: left;margin-left: 5rem;margin-top: 8rem;
+          + hr{margin-left: 5rem;border-color: @blueHyundai;}
+        }
+        .summaryexperience{
+          width: 50%;float: left;
+//          height: 500px;
+          div{ display: flex; justify-content: center;}
+        }
+        .summaryschedule{
+          margin: 0rem;
+          width: 50%;float: left;padding: 0 6rem;margin-bottom: 10rem;
+          h2{text-align: center;margin-bottom: 5rem; }
+          h3{font-size: 48px;}
+          h4{font-size: 24px;}
+          a.link{margin-bottom: 4rem;}
+        }
+        .summaryreportcontainerright {float: right;width: 35%; padding: 0 3rem;}
+        .summaryreportcontainerleft{
+          float: left; width: 65%; padding:0 3rem; border-right: 1px solid #BEBEBE;margin-bottom: 3rem;
+          .summarytitles{width:60%;margin-left: auto; margin-right: auto;}
+          #optionselectorbullets{width: 60%; margin:0 auto;}
+          #optionselector {width: 80%;margin:0 auto;}
+        }
+        .summaryreportcontainerbottom {
+          width: 70%; margin:2rem auto;clear: both;
+          .logomyhyundai {float: none;max-width: 220px;}
+          .summarysaveprogress {display: block;clear: both;}
+          .summaryprimarybutton {width: 60%; margin: 2rem auto 4rem !important;max-width: 315px;}
+          img{width: 50%; display: block;float: left;margin-bottom: 8rem;}
+          .bluelinkcontainer {float: left;width: 50%;margin-bottom: 3rem;}
+        }
+      }
+    }
+  }
+  .quizplanningstyleB {
+    background: #E8EBEC;
+    .quizfirstanswer {
+      .container .answercontainer{
+        align-items:stretch;min-height: 400px;
+        .answercontainerleft {
+          width:30%;display: flex; flex-direction: row;
+          ul#optionselectorbullets{
+            flex-direction: column;margin: 0;height: inherit;background: #4EC7DF;padding: 1rem;
+            li{
+              display: block;padding: 1rem 0;background: none;
+              a{background: url(../imgs/ic_oval_outline_big_w.png); background-size:26px;}
+              &.selected a{background: url(../imgs/ic_oval_outline_fill_big_w.png); background-size:26px;}
+              &.selectbulletfill {width: 1px; background-color: #fff; height: 100%; margin-left:13px;}
+            }
+
+          }
+          ul#optionselector {
+            flex-direction: column;margin: 0;padding: 1rem;padding-left: 1rem; background: none;text-align: left;background: #4EC7DF;
+            li {width: 100%;background: transparent;padding:1rem 0;}
+            li a {
+              text-align:left; color: @blueHyundai;font-size: 16px; font-family: @DIN-Pro;
+              span {text-align: left;font-size:16px; color: #fff;}
+            }
+          }
+        }
+        .answercontainerright {
+          /* Planning option Mobile 1 */
+          float: left; width: 70%;display: flex;justify-content: flex-end; background: rgba(0, 0, 0, .6); background: url(../imgs/img_planner_mobile_01.jpg) no-repeat center center;background-size:100% auto;
+          .imganswerplanner {
+            align-items: center;background: none;width: 100%;
+            div{padding-left: 50%;}
+          }
+          /* Planning option Mobile 2 */
+          &.half {background: url(../imgs/img_planner_mobile_02.jpg) no-repeat center center}
+          /* Planning option Mobile 3 */
+          &.spontaneous{background: url(../imgs/img_planner_mobile_03.jpg) no-repeat center center}
+          h3 {font-size: 24px;}
+          hr{width: 30%;margin-left: 0;}
+          p{color: #fff;font-family: @DIN-Pro;}
+        }
+      }
+    }
+  }
+  .quizparkathomeB{
+    .quizfirstanswer {
+      .container .answercontainer {
+        display: flex; align-items:stretch; height: 400px;
+        .answercontainerright {
+          width: 70%; float: left;padding-top: 5rem;
+          .explanimg {
+            width: 50%;float: left;background-size: 90% auto;
+          }
+          .explantxt {
+            width: 50%;float: left ;
+            h2{margin-left: 10%;}
+            p{margin-left: 10%;}
+          }
+          a#sendinfo {margin-left: 55%;width: 45%;}
+        }
+        .answercontainerleft {
+          /* Parking option 1 */
+          background-color:@blueHyundai;display: flex;flex-direction: row;width: 30%; float: left;/*background: url(../imgs/img_park_showcase1.jpg) no-repeat center center; background-size:auto 100%;*/
+          /* Parking option 2 */
+          &.apartment{background-color:@blueHyundai; display: flex;flex-direction: row;width: 30%; float: left; /*background: url(../imgs/img_park_showcase2.jpg) no-repeat center center; background-size:auto 100%;*/}
+          /* Parking option 3 */
+          &.street{background-color:@blueHyundai; background: url(../imgs/img_park_showcase3.jpg) no-repeat center center; background-size:auto 100%; display: flex;flex-direction: row;width: 50%; float: left;}
+          ul#optionselectorbullets{
+            flex-direction: column;margin: 0;height: inherit;padding: 1rem;
+            li{display: block;padding: 1rem 0;}
+            li.selectbulletfill {width: 1px; background-color: #fff;height: 100%;margin-left:13px;}
+            li.selectbullet{
+              background-color:transparent;
+              a {background: transparent url(../imgs/ic_oval_outline_big_w.png) no-repeat; background-size:26px;}
+              &.selected a{background: transparent url(../imgs/ic_oval_outline_fill_big_w.png) no-repeat left top;background-size:26px;}
+            }
+          }
+          ul#optionselector {
+            flex-direction: column;margin: 0;padding: 1rem;width: 30%;
+            li{background: transparent;}
+            li a {
+              text-align:left; color: @blueHyundai;font-size: 16px; font-family: @DIN-Pro;
+              p {
+                font-size: 16px;color: #000;color: #fff;
+                span{font-size: 24px; color: #fff; text-align: left;}
+              }
+            }
+          }
+        }
+        ul#parkfeatures {
+          padding: 0; border:none;
+          li {
+            width:35%; border-bottom:1px solid #BEBEBE; padding-bottom:1rem;font-size: 14px;
+            &:first-child {margin-left: 30%;}
+          }
+        }
+        dl {
+          display: flex; margin-bottom: 1rem;
+          dt {width:30%; text-align: right; padding: 0 1rem; margin-bottom: 0;font-size: 14px;}
+          dd {width:35%; padding: 0 1rem;margin-bottom: 0;font-size: 14px;}
+        }
+        .imganswer {display: none;}
+      }
+      a#sendinfo {width: 50%; margin-left: 40%;height: inherit;}
+      .chargermessage {margin-left: 30%;font-size: 18px;}
+    }
+  }
+  .selectbulletfill {width: 1px;background-color: #fff;height: 100%; margin-left: 13px;}
+  .quizcharginphoneB {
+    background-color: #E8EBEC;
+    .quizfirstanswer {
+      .container .answercontainer{
+        display: flex; align-items:stretch; position: relative;min-height: 400px;
+        #optionselectorcontainer {
+          display: flex; flex-direction: row;width: 30%;
+          ul#optionselectorbullets {
+            display: flex; flex-direction: column;justify-content: space-between;margin:0;height: inherit; background: none;background: #4EC7DF;padding: 1rem;
+            li{
+              padding: 1rem 0;
+              a{background: url(../imgs/ic_oval_outline_big_w.png); background-size:26px;}
+              &.selected a {background: url(../imgs/ic_oval_outline_fill_big_w.png); background-size:26px;}
+              &.selectbulletfill {width: 1px;background-color: #fff;height: 100%; margin-left: 13px;}
+            }
+          }
+          ul#optionselector{
+            display: flex;flex-direction: column;justify-content: space-between;Margin:0;height: inherit; background: none; padding-left: 1rem;background: #4EC7DF;padding: 1rem;
+            li {
+              width: 100%;padding: 1rem 0;text-align: left;
+              a{
+                font-size: 16px;
+                p{margin: 0;}
+                span{color: #fff;text-align: left;}
+              }
+            }
+          }
+        }
+        .answercontainerleft {
+          /* Planning option Charging 1 left */
+          width: 35%;height: 400px; background-size:auto 100%;
+          /* Planning option Charging 2 left */
+          &.day {background: url(../imgs/img_charge2.jpg) no-repeat center center; background-size:auto 100%;}
+          /* Planning option Charging 3 left */
+          &.differs {background: url(../imgs/img_charge4.jpg) no-repeat center center; background-size:auto 100%;}
+          h3 {position: absolute;top: 0;left:35%; width: 30%; margin-top:1rem;}
+          .imganswer{width: 100%;}
+          li a span{color: #fff; text-align: left;color: #fff;}
+        }
+        .answercontainerright {
+          /* Planning option Charging 1 right */
+          width:35%; height: 400px; background-size: auto 100%;
+          /* Planning option Charging 2 right */
+          &.day {
+            background: url(../imgs/7e.jpg) no-repeat center center; background-size:auto 100%;
+            .overnight{display: none;}
+            svg.day {
+              display: block !important; left:-75px;
+              + svg.day {left: 75px;}
+            }
+            h4.day{display: block !important;}
+          }
+          /* Planning option Charging 3 right */
+          &.differs {
+            background: url(../imgs/img_charge6.jpg) no-repeat center center; background-size:auto 100%;
+            .overnight{display: none;}
+            .differs {display: block !important;}
+          }
+          .imganswer {
+            svg{
+              left:0;top: 35%; margin-top: -50px;
+              &.svg_left{margin-left: -115px}
+              &.svg_right{margin-left: 20px}
+            }
+            h4 {width:300px;left: -150px;top:inherit;bottom: 10rem;}
+            img {margin-top: 2rem;}
+            h3 {font-size:32px; float: left;}
+            p {font-size:16px;}
+            a{
+              width: inherit;width:20%;float: right;
+              &:hover {text-decoration: none;}
+            }
+          }
+        }
+      }
+    }
+  }
+  .quizaveragetripB{
+    .quizfirstanswer {
+      .container .answercontainer {
+        display: flex; align-items:stretch;
+        .answercontainerright {
+          float: left;width: 70%;
+          div .carjourneyfill {align-items: center;}
+          div .carjourneyimg {
+            width: 100px;align-items: center;
+            p{background-size: 100%;}
+          }
+          div:first-child{
+            display: flex;align-items: center;
+            h3{margin: 0; margin-right: 3rem;}
+            .seasonselecter {
+              margin: 0;
+              a{margin: 0;min-width: 150px;}
+            }
+          }
+          div[class^="car_"] .cardata p {font-size: 48px;text-align: center;}
+          a{
+            width: inherit;width:20%;float: right;
+            &:hover {text-decoration: none;}
+          }
+        }
+        .answercontainerleft {
+          width:30%;float: left;display: flex; flex-direction: row;
+          ul#optionselectorbullets{
+            display: flex;flex-direction: column;justify-content: space-between;margin: 0;height: inherit;background: #4EC7DF;padding: 1rem;
+            li{display: block;padding: 1rem 0;}
+            li.selectbulletfill{width: 1px; background: #fff; height: 100%;margin-left: 13px;}
+            a{background: url(../imgs/ic_oval_outline_big_w.png); background-size:26px;}
+            .selected a{background: url(../imgs/ic_oval_outline_fill_big_w.png); background-size:26px;}
+            span {color: #fff;}
+          }
+          ul#optionselector {
+            display: flex; flex-direction: column;margin: 0;padding: 0;padding-left: 1rem;background: none;text-align: left;background-color:#4EC7DF;padding: 1rem;
+            li {width: 100%;}
+            li a {
+              text-align:left; color: #fff;;font-size: 16px; font-family: @DIN-Pro;
+              span {text-align: left;font-size:12px;color: #fff;}
+            }
+          }
+        }
+        .imganswer {display: none;}
+        a#sendinfo {width: 50%; margin-left: 40%;height: inherit;}
+      }
+    }
+  }
+  .containerbluedriveleft {width: 50%;height: 450px;float: left;background-size: 100%;}
+  .containerbluedriveright {
+    width: 50%;float: left;
+    h2.learn-more-title-right {font-size: 24px; font-family: @DIN-Pro; width: 85%; margin: 2rem auto 1rem;}
+    h2 + p {font-size: 16px; font-family: @DIN-Pro;padding: 2rem;width: 85%; margin: 0 auto;}
+  }
+  #learnmorebluedrive .otherlearn {
+    width: 24%;height: 500px;background-size:auto 100%;
+  }
+  .learn-more-blue-drive,
+  .learn-more-design,
+  .learn-more-battery,
+  .learn-more-saving-A,
+  .learn-more-saving-B {
+    position: relative;
+    padding-bottom: 30px;
+    padding-top: 110px;
+    a.navigationprev{top:51%;left:-70px;position: absolute;}
+    a.navigationnext{top:51%;right:-70px;position: absolute;}
+  }
+  .learn-more-blue-drive,
+  .learn-more-saving-A,
+  .learn-more-saving-B,
+  .learn-more-design,
+  .learn-more-battery {
+    .blue-drive {
+      margin-top: 25px;
+      .containerbluedriveright {
+        width: 50%;float: left;
+        h2{margin-bottom: 2rem;}
+        #carousel-example-car1, #carousel-example-car2{
+          width: 50%;float: left;
+          .item{width:100%;}
+        }
+        #bluedrivedatacontainer {
+          width: 50%; float: left;
+          .bluedrivedata {
+            p{
+              font-size: 14px;
+              span{font-size: 42px;}
+            }
+          }
+        }
+      }
+    }
+    .learnmorecontainer {display: flex;justify-content: space-between;}
+  }
+  .learn-more-saving-B {
+    .containerbluedriveright {padding: 1rem;}
+    #aboutyourcar,
+    #aboutyourcarbuttons {width: 70%; margin: 0 auto;}
+  }
+  .design-features {
+    display: flex;flex-direction: row;width: 80%; margin:0 auto;
+    .feature {
+      margin: 2rem 0;
+      img{max-width: 30px;}
+    }
+  }
+
+	/*#modalyourioniq {
+		.modal-content {
+		}
+		.modal-header {
+			padding-left: 9rem;
+		}
+		.modal-dialog {
+			width: 600px
+		}
+		.modal-body {
+			padding: 1rem 2rem 10rem 9rem;
+		}
+		input {
+			width: 50%;
+		}
+		h2 {
+			margin-top: 9rem;
+		}
+		div {
+		}
+		a.notnow {
+			width: 22%;
+			margin-right: 6%;
+			display: inline-block;
+		}
+		a.submit {
+			width: 22%;
+			display: inline-block;
+		}
+		img.back02 {
+			position: absolute;
+			bottom: 0;
+			z-index: 2;
+			width: 160px;
+			right: 20px;
+		}
+	}
+
+	#modalcompletequiz {
+		.modal-content {
+		}
+		.modal-header {
+			padding-left: 9rem;
+		}
+		.modal-dialog {
+			width: 600px
+		}
+		.modal-body {
+			padding: 1rem 2rem 10rem 9rem;
+		}
+		input {
+			width: 50%;
+		}
+		h2 {
+			margin-top: 9rem;
+		}
+		div {
+		}
+		img.back02 {
+			position: absolute;
+			bottom: 0;
+			z-index: 2;
+			width: 160px;
+			right: 20px;
+		}
+	}
+
+	#modal_send_me_charge {
+		.modal-content {
+		}
+		.modal-header {
+			padding-left: 9rem;
+		}
+		.modal-dialog {
+			width: 600px
+		}
+		.modal-body {
+			padding: 1rem 2rem 10rem 9rem;
+		}
+		input {
+			width: 50%;
+		}
+		h2 {
+			margin-top: 9rem;
+		}
+		div {
+		}
+		a.notnow {
+			width: 22%;
+			margin-right: 6%;
+			display: inline-block;
+		}
+		a.submit {
+			width: 22%;
+			display: inline-block;
+		}
+		img.back01 {
+			position: absolute;
+			bottom: 50%;
+			z-index: 1;
+			width: 375px;
+			left: inherit;
+			right: 0px;
+		}
+	}*/
+}
+@media screen and (min-width: 1024px) {
+  .header {
+    .logocontainer{}
+    .iconscontainer{width: 40%;}
+  }
+  .container#containerTheQuiz,
+  .container#containerLearnMore,
+  .container#containerVideo {
+    background: #fff;width: 100%;
+    .row {width: 1024px;margin:0 auto;}
+  }
+  .container.header {
+    /*width:100%;*/
+    header {min-width: 1024px;}
+  }
+  #takethequiz {
+    .quizelements{
+      display: flex; justify-content: space-between;
+      .quizelement {
+        h4  {font-size: 24px;}
+        min-height: 375px; width: 20%; margin: 0 .3rem;
+        &:first-child {margin-left: 0;}
+        &:last-child {margin-right: 0;}
+      }
+    }
+    a.generate-summary {width: 300px;margin: 2rem auto 1rem auto;}
+  }
+  #learnmore {
+    .learnmoreelements {
+      display: flex; justify-content: space-between;
+      .learnmoreelement {
+        min-height: 450px; margin:0 1rem;
+		&.learnmoreelementdesign,
+        &.learnmoreelementbluedrive,
+        &.learnmoreelementbattery,
+        &.learnmoreelementcost {background-size: auto 100%;}
+      }
+    }
+  }
+  .bx-wrapper {max-width: 100% !important;}
+  #footer {
+//    .container {background: #f0f0f0;}
+    #footerlinks {
+      display: block;
+      .links {width: 50%; float: left;}
+      ul {
+        display: flex;justify-content: space-around;
+        li{display: inline-block;}
+      }
+    }
+  }
+  .quizfirstanswer {
+  	div.headerquiz{
+	    h2 {font-size: 24px;}
+	}
+  }
+  #quizmorequestions {
+    .otherquestioncontainer {
+      display: flex; justify-content: space-between;
+      .otherquestion {
+        margin: 0 .5rem; width: 13%;background-size: 100%;
+		  height: 315px;
+        div{padding: 1.5rem 1rem;}
+        &:first-child{margin-left:0;}
+      }
+    }
+  }
+  #quizgeneratesummary{width: 35%;}
+  #modalregister {
+    .modal-dialog{width:1000px}
+  }
+  #modalyourioniq {
+    .modal-dialog{width:1000px}
+  }
+  #modalcompletequiz {
+    .modal-dialog{width:1000px}
+  }
+  #modal_send_me_charge {
+    .modal-dialog{width:1000px}
+  }
+  #modalcar1, #modalcar2, #modalcar3  {
+    .modal-dialog{
+      width: 1000px;
+    }
+  }
+
+}
+@media screen and (min-width: 1270px) {
+  .container.header .containerbigdesktop {width: 1270px; margin:0 auto;}
+  .container {
+    &#containerTheQuiz,
+    &#containerLearnMore,
+  &#containerVideo {/*width: 1024px; margin: 0 auto;*/}
+  }
+  #footer {
+    /*width: 1024px; margin: 0 auto;*/
+    .container {width: 100%;}
+  }
+  #test-drive {
+    h2 {font-size: 48px;}
+  }
+}
+#zipcode {
+  outline: none;
+  font-family: "DIN Pro";
+  font-size: 18px;
+  color: rgb(62, 195, 222);
+  border: 0px;
+  width: 100px;
+}
+
+.summaryModule {
+    width: 100%;
+    background: #fff;
+    float: left;
+}

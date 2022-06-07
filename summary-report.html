@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IONIQ Life Tool - View your IONIQ | Hyundai</title>
+ 	<meta name="description" content="IONIQ. One Car. Three Options. Experience the IONIQ. Share your IONIQ." />
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/main.css">
+
+    <script type="text/javascript" src="libs/ius20_main.js"></script>
+    <script type="text/javascript" src="js/cookies.js"></script>
+    <script type="text/javascript" src="libs/ius20_summary.js"></script>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-92616501-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+  </head>
+  <body id="summary-report">
+    <div class="container header">
+      <div class="containerbigdesktop">
+        <div class="logocontainer">
+          <h1 class="pull-left"><a href="index.html"><span>IONIQ</span></a></h1>
+          <h2 class="hidden-xs ">One Car. Three Options.</h2>
+        </div>
+        <div class="iconscontainer pull-right">
+          <input type="" id="zipcode" placeholder="What's your zipcode?" onblur="UpdateZipCode(this.value,1)" onfocus="focusZipCode(this)"></input>
+          <a href="#" class="account-icon" data-toggle="modal" data-target="#modalregister"><span class="hidden-xs">&nbsp;Save&nbsp;Progress</span></a>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="progressbar" id="progressbar"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <section class="quizfirstanswer">
+            <div class="container">
+                <a href="index.html" class="closesummary"></a>
+                <h2 id="m_title"></h2>
+              <div class="summaryreportcontainer">
+  <!--
+                <div class="sumaryreportsec1">
+                  <div>
+                    <div>
+                      <h2>You put in a lot of miles, <span class="userName"></span>.</h2>
+                      <h3>There is one car that can get you there.</h3>
+                    </div>
+                  </div>
+                </div>
+-->
+                <div class="text-center summarycar">
+                  <div>
+                    <img id="m_image" src="" alt="IONIQ" hidden>
+                    <h3><img src="imgs/IONIQ.png" alt="" class="Ioniqsummarylogo"> <span id="m_model_1"></span></h3>
+                    <p id="m_text"></p>
+                  </div>
+                </div>
+
+                <div class="summarycarstoryHead">
+                  <div>
+                    <h3>Here is why</h3>
+                    <hr>
+                  </div>
+                </div>
+                <div id="storyWhy"></div>
+
+                <div class="text-center share">
+                  <h2 class="text-black">Share your IONIQ</h2>
+                  <a rel="nofollow" href="https://www.facebook.com/Hyundai?v=wall" target="_blank">
+                    <img src="imgs/facebook.png" alt="Facebook" class="ico-footer-facebook" height="24px">
+                  </a>
+                  <a rel="nofollow" href="https://twitter.com/HYUNDAI" target="_blank">
+                    <img src="imgs/twitter.png" alt="Twitter" class="ico-footer-twitter" height="24px">
+                  </a>
+                  <a rel="nofollow" href="https://www.hyundaiusa.com/myhyundai/myaccount/communication-preferences-notloggedon" target="_blank">
+                  <img src="imgs/ic_email.png" alt="E-mail" class="ico-footer-email" height="24px">
+                  </a>
+                  <hr class="grey_border_color">
+                </div>
+                <div class="summarycarstoryHead" class="text-center" id="storyOtherHead" style="justify-content:center;">
+                  <div >
+                    <h3 style="text-align:center">You might still consider other<BR />choices because...</h3>
+                  </div>
+                </div>
+
+                <div id="storyOther"></div>
+                <!--
+                <div class="summarycarstory1">
+                  <div>
+                    <h3>Here is why</h3>
+                    <hr>
+                  </div>
+                </div>
+                <div class="summarycarstory2">
+                  <div>
+                    <h3>You're spontaneous</h3>
+                    <p>With IONIQ Hybrid you can drop everything and go, while still being energy-efficient.</p>
+                  </div>
+                  <div></div>
+                </div>
+                <div class="summarycarstory3">
+                  <div>
+                    <h3>You’ve got a dead battery on the daily</h3>
+                    <p>Never worry about your battery, but still feel good about reducing CO2 emissions with IONIQ Hybrid. IONIQ Hybrid reduces CO2 emissions with no battery worries.</p>
+                  </div>
+                  <div></div>
+                </div>
+                <div class="summarycarstory4">
+                  <div>
+                    <h3>You’re a road warrior</h3>
+                    <p>Ioniq Hybrid reduces your carbon footprint, no charging necessary.</p>
+                  </div>
+                  <div></div>
+                </div>
+                <div class="summarycarstory5">
+                  <div>
+                    <h3>IONIQ saves you money</h3>
+                    <p>Decrease your fuel costs, go further on a tank and reduce CO2 emissions, all while getting where you need to go in style.</p>
+                    <a href="#">View Savings</a>
+                  </div>
+                  <div></div>
+                </div>
+-->
+
+                <h3 class="experiencetitle">Experience IONIQ</h3>
+                <div class="summaryexperience">
+                  <div>
+                    <img src="imgs/imgzenit.png" alt="" class="img-responsive">
+                  </div>
+                  <div>
+                  </div>
+                </div>
+                <div class="summaryschedule">
+                  <h2><img src="imgs/IONIQ.png" alt="" class="Ioniqsummarylogo"> <span id="m_model_2"></span></h2>
+                  <h3>Schedule a test drive</h3>
+                  <h4>Visit your local dealer and experience your IONIQ in person.</h4>
+                  <p>Nearest Dealer</p>
+                  <a href="#" class="summaryprimarybutton">Hyundai Serramonte</a>
+                  <a href="https://www.hyundaiusa.com/dealer-locator/#/92708" class="link">Find a different dealer</a>
+                  <h3>Learn more about pricing</h3>
+                  <h4>View costs and payments</h4>
+                  <a href="https://www.hyundaiusa.com/build-your-hyundai/" class="summaryprimarybutton">IONIQ Pricing</a>
+                </div>
+                <div class="summaryreportcontainerbottom">
+                  <img src="imgs/logo_myhyundai.png" alt="Logotipo My Hyundai" class="logomyhyundai">
+                  <p class="summarysaveprogress">Save your progress</p>
+                  <p class="summarysaveprogressexp">Save your answers by signing into your Hyundai account. </p>
+                  <a href="#" class="summaryprimarybutton" data-toggle="modal" data-target="#modalregister">Save progress</a>
+                  <img src="imgs/img_bluelink.jpg" alt="Blue link image" class="img-responsive">
+                  <div class="bluelinkcontainer">
+                    <p class="bluelinktitle">Use your My Hyundai account with Blue Link</p>
+                    <p class="bluelinktext">Easily connect your smartphone or smartwatch to your vehicle with Hyundai's innovative Blue Link technology as part of Hyundai Assurance.</p>
+                    <a href="#" class="bluelinklearnmore">Learn More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="col-xs-12">
+          <div class="container Test-drive">
+            <section id="test-drive" class="quiz-again">
+              <h2>Take the Quiz again</h2>
+              <h3>Find out which model is right for you</h3>
+              <ul class="list-inline">
+                <li>
+                  <a href="" class="viewcar" data-toggle="modal" data-target="#modalcar1">
+                    <img src="imgs/car1.png" alt="Hyundai Ioniq car 1">
+                    <div class="resalte"></div>
+                  </a>
+                  <img src="imgs/icon_electric.png" alt="Electric icon" style="width:40px">
+                  <h4>Electric</h4>
+                </li>
+                <li>
+                  <a href="#" class="viewcar" data-toggle="modal" data-target="#modalcar2">
+                    <img src="imgs/car2.png" style="width:75%" alt="Hyundai Ioniq car 2">
+                    <div class="resalte"></div>
+                  </a>
+                  <img src="imgs/icon_hybrid.png" alt="Hybrid icon" style="width:40px">
+                  <h4>Hybrid</h4>
+                </li>
+                <li>
+                  <a href="" class="viewcar" data-toggle="modal" data-target="#modalcar3">
+                    <img src="imgs/car3.png" alt="Hyundai Ioniq car 3">
+                    <div class="resalte"></div>
+                  </a>
+                  <img src="imgs/icon_plug-in.png" alt="Plug-in icon" style="width:40px">
+                  <h4>Plug-in</h4>
+                </li>
+              </ul>
+              <a class="test-drive-button" href="which-ioniq-are-you.html" onclick="resetQuiz()">Which IONIQ are you?</a>
+            </section>
+          </div>
+        </div>
+        <section id="footer">
+          <div class="container" style="background:#f0f0f0;">
+            <hr>
+            <div class="summaryModule">
+              <div class="col-xs-12 col-md-4 col-md-offset-4 text-center" id="RRSS">
+              <a rel="nofollow" href="https://www.facebook.com/Hyundai?v=wall" target="_blank">
+                <img src="imgs/facebook.png" alt="Facebook" class="ico-footer-facebook">
+              </a>
+              <a rel="nofollow" href="https://twitter.com/HYUNDAI" target="_blank">
+                <img src="imgs/twitter.png" alt="Twitter" class="ico-footer-twitter">
+              </a>
+              <a rel="nofollow" href="https://instagram.com/hyundaiusa" target="_blank">
+                <img src="imgs/instagram-icon.png" alt="Instagram" class="ico-footer-instagram">
+              </a>
+              <a rel="nofollow" href="https://www.youtube.com/HyundaiUSA" target="_blank">
+                <img src="imgs/youtube.png" alt="Youtube" class="ico-footer-youtube">
+              </a>
+              <a rel="nofollow" href="https://www.hyundaiusa.com/myhyundai/myaccount/communication-preferences-notloggedon" target="_blank">
+              <img src="imgs/ic_email.png" alt="E-mail" class="ico-footer-email">
+              </a>
+            </div>
+            </div>
+            <div class="col-xs-12 text-center" id="logohyundai">
+              <img src="imgs/Hyundai_Icon.png" alt="Logotipo Hyundai">
+            </div>
+
+            <div class="col-xs-12 col-md-6 summaryModule"><p style="margin:0">Hyundai is a registered trademark of Hyundai Motor Company. All rights reserved. ©2017 Hyundai Motor America.</p></div>
+            <div class="col-xs-12" id="footerlinks">
+              <div class="links linksleft">
+                <ul>
+                  <li><a href="https://www.hyundaiusa.com/dealer-locator/index.aspx">Find a Dealer</a></li>
+                  <li><a href="https://www.hyundaiusa.com/sitemap.aspx">Site Map</a></li>
+                  <li><a href="https://www.hyundaiusa.com/privacy-policy.aspx">Privacy Policy</a></li>
+                  <li><a href="https://www.hyundaiusa.com/owner-privacy-policy.aspx">Owner Privacy Policy</a></li>
+                  <li><a href="https://www.hyundaiusa.com/legal.aspx">Legal</a></li>
+                </ul>
+              </div>
+              <div class="links linksright">
+                <ul>
+                  <li><a href="https://www.hyundaiusa.com/assurance/america-best-warranty.aspx">Warranty</a></li>
+                  <li><a href="https://www.hyundaiusa.com/help-faq.aspx">FAQ/Help</a></li>
+                  <li><a href="https://www.hyundaiusa.com/myhyundai/myaccount/communication-preferences-notloggedon">Email Updates</a></li>
+                  <li><a href="https://www.hyundaiusa.com/contact-us.aspx">Contact Us</a></li>
+                  <li><a href="https://www.hyundaiusa.com/terms-conditions.aspx">Terms of Use</a></li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+          <div class="container">
+
+            <hr style="margin:0;background:#fff;">
+            <div class="class="col-md-7 text-left" id="legalmessage">
+              <p>Non-US preproduction 2017 IONIQ with optional features shown.</p>
+              <p>12017 IONIQ Hybrid Blue: 57 City/59 Hwy/58 Combined. 2017 IONIQ Hybrid SEL/IONIQ Hybrid Limited: 55 City/54 Hwy/55 Combined. EPA estimates. For comparison only. Your actual mileage may vary with options, driving conditions, driving habits and vehicle’s condition.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+
+    <div class="modal fade modal_info" tabindex="-1" role="dialog" id="modalcompletequiz">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <button type="button" aria-label="Close" class="close" data-dismiss="modal"  onclick="goToLogin();">
+              <span aria-hidden="true">&times;</span></button>
+            <h2>Completing the quiz will help us recommend the best IONIQ for you.</h2>
+          </div>
+          <div class="modal-body" style="margin-top:40px;">
+            <div>
+              <a href="/which-ioniq-are-you.html" class="notnow">Continue quiz</a>
+              <a href="#" class="submit" data-dismiss="modal" onclick="goToLogin();return false;">View IONIQ now</a>
+            </div>
+          </div>
+		  <img src="imgs/img_topcar_left.jpg" class="back01">
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade modal_info" tabindex="-1" role="dialog" id="modalyourioniq">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <button type="button" onclick="getUserName(1)" class="close" aria-label="Close">
+              <span aria-hidden="true">&times;</span></button>
+            <h2>What's your first name?</h2>
+            <p>Help us personalize your experience</p>
+          </div>
+          <div class="modal-body">
+            <input type="text" id="userName">
+            <div>
+              <a href="#" class="notnow" onclick="getUserName(1);return false;">Not now</a>
+              <a href="#" class="submit" onclick="getUserName();return false;">Submit</a>
+            </div>
+            <img src="imgs/car1.png" alt="" class="back01">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" tabindex="-1" role="dialog" id="modalregister">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <img src="imgs/register_screenshot.png" alt="" class="img-responsive">
+          </div>
+          <div class="modal-body">
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

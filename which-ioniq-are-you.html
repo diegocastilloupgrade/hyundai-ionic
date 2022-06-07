@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IONIQ Life Tool - Which IONIQ are you?| Hyundai</title>
+ 	<meta name="description" content="One Car. Three Options. Are you a planner or more spontaneous? Where will your IONIQ take you? What are your daily drives like? Where would you park your IONIQ?" />
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/main.css">
+
+    <script type="text/javascript" src="libs/ius20_main.js"></script>
+    <script type="text/javascript" src="js/cookies.js"></script>
+    <script type="text/javascript" src="js/trips_per_charge.js"></script>
+
+    <script type="text/javascript" src="libs/ius20_quiz.js"></script>
+    <script type="text/javascript" src="libs/igz_gmaps.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBQHW9EuhvZxTp6T0OVp4TNAY90-HHxn-A"></script>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-92616501-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+  </head>
+  <body id="quizmerge">
+    <div class="container header">
+      <div class="containerbigdesktop">
+        <div class="logocontainer">
+          <h1 class="pull-left"><a href="index.html"><span>IONIQ</span></a></h1>
+          <h2 class="hidden-xs ">One Car. Three Options.</h2>
+        </div>
+        <div class="iconscontainer pull-right" >
+          <input type="" id="zipcode" placeholder="What's your zipcode?" onblur="UpdateZipCode(this.value,1)" onfocus="focusZipCode(this)" ></input>
+          <a href="#" class="account-icon" data-toggle="modal" data-target="#modalregister"><span class="hidden-xs">&nbsp;Save&nbsp;Progress</span></a></a>
+        </div>
+         <div class="row">
+          <div class="col-xs-12">
+            <div class="progressbar" id="progressbar"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="quizquestions">
+
+      <div class="quizplanningstyleA" id="q1a">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <section class="quizfirstanswer">
+                <div><a href="#" class="navigationnext"></a></div>
+                <div class="container">
+                  <div class="headerquiz">
+                    <h2>Are you a planner or more spontaneous?</h2>
+                    <a href="index.html" class="closequiz"></a>
+                  </div>
+                  <div class="answercontainer">
+                    <div class="answer answercalendarfriend">
+                      <a href="#" onclick="quizOption(1);return false;">
+                        <div>
+                          <hr>
+                          <h3>My calendar is my best friend</h3>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="answer answereitherway">
+                      <a href="#" onclick="quizOption(2);return false;">
+                        <div>
+                          <hr>
+                          <h3>I can go either way</h3>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="answer answerdropgo">
+                      <a href="#" onclick="quizOption(3);return false;">
+                        <div>
+                          <hr>
+                          <h3>Let's drop everything and go!</h3>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="quizplanningstyleB" id="q1b" style="display:none">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <section class="quizfirstanswer">
+                <div><a href="#" class="navigationprev"></a><a href="#" class="navigationnext"></a></div>
+                <div class="container">
+                  <div class="headerquiz">
+                    <h2>Are you a planner or more spontaneous?</h2>
+                    <a href="index.html" class="closequiz"></a>
+                  </div>
+                  <div class="answercontainer" id="q1_d3b">
+                    <div class="answercontainerleft">
+                      <ul class="list-inline" id="optionselectorbullets">
+                        <li class="selectbullet"><a href="#" onclick="quizOption(1,1);return false;"></a></li>
+                        <li class="selectbulletfill"></li>
+                        <li class="selectbullet"><a href="#" onclick="quizOption(2,1);return false;"></a></li>
+                        <li class="selectbulletfill"></li>
+                        <li class="selectbullet"><a href="#" onclick="quizOption(3,1);return false;"></a></li>
+                      </ul>
+                      <ul class="list-inline" id="optionselector">
+                        <li>
+                          <a href="#" onclick="quizOption(1,1);return false;" class="">
+                            <p class="hidden-sm hidden-md hidden-lg"><span>Planner</span></p>
+                            <p class="hidden-xs"><span>My calendar is my best friend</span></p>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" onclick="quizOption(2,1);return false;"class="text-center">
+                            <p class="hidden-sm hidden-md hidden-lg"><span>Half & Half</span></p>
+                            <p class="hidden-xs"><span>I can go either way</span></p>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" onclick="quizOption(3,1);return false;" class="text-center">
+                            <p class="hidden-sm hidden-md hidden-lg"><span>Spontaneous</span></p>
+                            <p class="hidden-xs"><span>Let’s drop everything and go!</span></p>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="answercontainerright spontaneous" id="q1_d3">
+                      <div class="imganswer imganswerplanner">
+                        <div>
+                          <h3 id="q1_d1">You know where you’re headed and how long it takes to get there.</h3>
+                          <hr>
+                          <p id="q1_d2">The IONIQ EV is a perfect fit.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="quizplanningstyleA" id="q2a" style="display:none">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <section class="quizfirstanswer">
+                <div><a href="#" class="navigationprev"></a><a href="#" class="navigationnext"></a></div>
+                <div class="container">
+                  <div class="headerquiz">
+                    <h2>How often do you charge your phone?</h2>
+                    <a href="index.html" class="closequiz"></a>
+                  </div>
+                  <div class="answercontainer">
+                    <div class="answer answeralwaysplugged">
+                      <a href="#" onclick="quizOption(1);return false;">
+                        <div>
+                          <hr>
+                          <h3>I'm always plugged in</h3>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="answer answercarrycharger">
+                      <a href="#" onclick="quizOption(2);return false;">
+                        <div>
+                          <hr>
+                          <h3>I like to carry a charger</h3>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="answer answerdeadbattery">
+                      <a href="#" onclick="quizOption(3);return false;">
+                        <div>
+                          <hr>
+                          <h3>I've got a dead battery on the daily</h3>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="quizcharginphoneB" id="q2b" style="display:none">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <section class="quizfirstanswer">
+                <div><a href="#" class="navigationprev"></a><a href="#" class="navigationnext"></a></div>
+                <div class="container">
+                  <div class="headerquiz">
+                    <h2>How often do you charge your phone?</h2>
+                    <a href="index.html" class="closequiz"></a>
+                  </div>
+                  <div class="answercontainer">
+                    <div id="optionselectorcontainer">
+                      <ul class="list-inline" id="optionselectorbullets">
+                        <li class="selectbullet"><a href="#" onclick="quizOption(1,1);return false;"></a></li>
+                        <li class="selectbulletfill"></li>
+                        <li class="selectbullet"><a href="#" onclick="quizOption(2,1);return false;"></a></li>
+                        <li class="selectbulletfill"></li>
+                        <li class="selectbullet"><a href="#" onclick="quizOption(3,1);return false;"></a></li>
+                      </ul>
+                      <ul class="list-inline" id="optionselector">
+                        <li>
+                          <a href="#" onclick="quizOption(1,1);return false" class="">
+                            <p class="hidden-sm hidden-md hidden-lg"><span>Night</span></p>
+                            <p class="hidden-xs"><span>Overnight</span></p>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" onclick="quizOption(2,1);return false" class="text-center">
+                            <p class="hidden-sm hidden-md hidden-lg"><span>Day</span></p>
+                            <p class="hidden-xs"><span>I have my charger with me all day</span></p>
+                          </a>
+                        </li>
+                        <li class="text-right">
+                          <a href="#" onclick="quizOption(3,1);return false">
+                            <p class="hidden-sm hidden-md hidden-lg"><span>Differs</span></p>
+                            <p class="hidden-xs"><span>I run out of battery all the time</span></p>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="answercontainerleft" id="q2_d3a">
+                      <div class="imganswer"></div>
+                    </div>
+                    <div class="answercontainerright" id="q2_d3b">
+                      <div class="imganswer">
+                        <svg width="96px" height="95px" viewBox="0 0 96 95" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+                          <title>ic_moon</title>
+                          <desc>Created with Sketch.</desc>
+                          <defs></defs>
+                          <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="Library" transform="translate(-959.000000, -41.000000)" fill="#ffffff">
+                              <g id="ic_moon" transform="translate(959.000000, 40.000000)">
+                                <g id="noun_785694_cc">
+                                  <path d="" id="q2_svg_center"></path>
+                                </g>
+                              </g>
+                            </g>
+                          </g>
+                        </svg>
+                        <svg class="svg_left" width="96px" height="95px" viewBox="0 0 96 95" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+                          <title>ic_moon</title>
+                          <desc>Created with Sketch.</desc>
+                          <defs></defs>
+                          <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="Library" transform="translate(-959.000000, -41.000000)" fill="#ffffff">
+                              <g id="ic_moon" transform="translate(959.000000, 40.000000)">
+                                <g id="noun_785694_cc">
+                                  <path d="" id="q2_svg_left"></path>
+                                </g>
+                              </g>
+                            </g>
+                          </g>
+                        </svg>
+                        <svg class="svg_right" width="96px" height="95px" viewBox="0 0 96 95" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+                          <title>ic_moon</title>
+                          <desc>Created with Sketch.</desc>
+                          <defs></defs>
+                          <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="Library" transform="translate(-959.000000, -41.000000)" fill="#ffffff">
+                              <g id="ic_moon" transform="translate(959.000000, 40.000000)">
+                                <g id="noun_785694_cc">
+                                  <path d="" id="q2_svg_right"></path>
+                                </g>
+                              </g>
+                            </g>
+                          </g>
+                        </svg>
+                        <h4 id="q2_d1">Plug in your IONIQ EV the same way you plug in your phone, and then get your beauty sleep.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="quizaveragetripA" id="q3a" style="display:none">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <section class="quizfirstanswer">
+                <div><a href="" class="navigationprev"></a><a href="" class="navigationnext"></a></div>
+                <div class="container" >
+                  <div class="headerquiz">
+                    <h2>Where will your IONIQ take you?</h2>
+                    <a href="index.html" class="closequiz"></a>
+                  </div>
+                  <div class="answercontainer">
+                    <div class="answer answersanfrancisco">
+                      <a href="#" onclick="quizOption(1);return false;">
+                        <div>
+                          <hr>
+                          <h3>I pretty much stay close to home</h3>
+                          <input type="text" class="tripselector" placeholder="Santa Monica">
+                        </div>
+                      </a>
+                    </div>
+                    <div class="answer answerlaketahoe">
+                      <a href="#" onclick="quizOption(2);return false;">
+                        <div>
+                          <hr>
+                          <h3>I like short trips out of town</h3>
+                          <input type="text" class="tripselector" placeholder="Santa Barbara">
+                        </div>
+                      </a>
+                    </div>
+                    <div class="answer answerlosangeles">
+                      <a href="#" onclick="quizOption(3);return false;">
+                        <div>
+                          <hr>
+                          <h3>I love a long road trip</h3>
+                          <input type="text" class="tripselector" placeholder="San Francisco">
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="chargingoB" id="q3b" style="display:none">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <section class="quizfirstanswer">
+                <div><a href="" class="navigationprev"></a><a href="" class="navigationnext"></a></div>
+                <div class="container">
+                  <div class="headerquiz">
+                    <h2>Where will yoour IONIQ take you?</h2>
+                    <a href="index.html" class="closequiz"></a>
+                  </div>
+                  <div class="answercontainer">
+                    <div class="answercontainerleft">
+                       <ul class="list-inline" id="optionselectorbullets">
+                          <li class="selectbullet selected"><a href="#" onclick="quizOption(1,1);return false;"></a></li>
+                          <li class="selectbulletfill"></li>
+                          <li class="selectbullet"><a href="#" onclick="quizOption(2,1);return false;"></a></li>
+                          <li class="selectbulletfill"></li>
+                          <li class="selectbullet"><a href="#" onclick="quizOption(3,1);return false;"></a></li>
+                        </ul>
+                        <ul class="list-inline" id="optionselector">
+                          <li onclick="quizOption(1,1);return false;">
+                            <a href="#" class="hidden-md hidden-lg selected"><span>Within my city</span>San Francisco</a>
+                            <a href="#" class="hidden-xs hidden-sm selected">I pretty much stay close to home</a>
+                          </li>
+                          <li onclick="quizOption(2,1);return false;">
+                            <a href="#" class="hidden-md hidden-lg"><span>Weekend Trip</span>Lake Tahoe</a>
+                            <a href="#" class="hidden-xs hidden-sm">I like short trips out of town</a>
+                          </li>
+                          <li onclick="quizOption(3,1);return false;">
+                            <a href="#" class="hidden-md hidden-lg"><span>Road Trip</span>Los Angeles</a>
+                            <a href="#" class="hidden-xs hidden-sm">I love a long road trip</a>
+                          </li>
+                        </ul>
+                      <div class="inputmapdata">
+                        <p>Destination</p>
+                        <input id="autocomplete" placeholder="Santa Monica" onFocus="geolocate()" type="text"></input>
+                        <span><h3 id="q3_d1">You have <span id='q3_s1'></span> charging stations in your zip code.</h3></span>
+                        <p id="q3_d2">You’ll never need to worry about getting where you need to go near your home with IONIQ EV.</p>
+                      </div>
+                  </div>
+                  <div class="answercontainerright" id="map">
+                    <!-- Map code-->
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="quizaveragetripA" id="q4a" style="display:none">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <section class="quizfirstanswer">
+                <div><a href="" class="navigationprev"></a><a href="" class="navigationnext"></a></div>
+                <div class="container">
+                  <div class="headerquiz">
+                    <h2>What are your daily drives like?</h2>
+                    <a href="index.html" class="closequiz"></a>
+                  </div>
+                  <div class="answercontainer">
+                    <div class="answer answershort">
+                      <a href="#" onclick="quizOption(1);return false;">
+                        <div>
+                          <hr>
+                          <h3>A short haul</h3>
+                          <h4>5-10 miles</h4>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="answer answermoderate">
+                      <a href="#" onclick="quizOption(2);return false;">
+                        <div>
+                          <hr>
+                          <h3>Moderate commuter</h3>
+                          <h4>30-70 miles</h4>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="answer answerhardcore">
+                      <a href="#" onclick="quizOption(3);return false;">
+                        <div>
+                          <hr>
+                          <h3>Hardcore commuter</h3>
+                          <h4>More than 100 miles per trip</4>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="quizaveragetripB" id="q4b" style="display:none">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <section class="quizfirstanswer">
+                <div><a href="" class="navigationprev"></a><a href="" class="navigationnext"></a></div>
+                <div class="container">
+                  <div class="headerquiz">
+                    <h2>What are your daily drives like?</h2>
+                    <a href="index.html" class="closequiz"></a>
+                  </div>
+                  <div class="answercontainer">
+                    <div class="answercontainerleft">
+                      <ul class="list-inline" id="optionselectorbullets">
+                        <li class="selectbullet"><a href="#" onclick="quizOption(1,1);return false;"></a></li>
+                        <li class="selectbulletfill"></li>
+                        <li class="selectbullet"><a href="#" onclick="quizOption(2,1);return false;"></a></li>
+                        <li class="selectbulletfill"></li>
+                        <li class="selectbullet"><a href="#" onclick="quizOption(3,1);return false;"></a></li>
+                      </ul>
+                      <ul class="list-inline" id="optionselector">
+                        <li class="">
+                          <a href="#" class="hidden-md hidden-lg"><span>Short</span><span>5-10 Miles</span></a>
+                          <a href="#" class="hidden-xs hidden-sm">A short haul <br> <span>5-10 Miles</span></a>
+                        </li>
+                        <li class="">
+                          <a href="#" class="hidden-md hidden-lg"><span>Medium</span><span>30-70 Miles</span></a>
+                          <a href="#" class="hidden-xs hidden-sm">Moderate Commuter <br> <span>30-70 Miles</span></a>
+                        </li>
+                        <li class="">
+                          <a href="#" class="hidden-md hidden-lg"><span>Long</span><span>100+ Miles</span></a>
+                          <a href="#" class="hidden-xs hidden-sm">Hardcore commuter <br><span>100+ Miles</span></a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="answercontainerright">
+                      <div>
+                        <h3 id="q4_d1"></h3>
+ <!--
+                        <div class="seasonselecter">
+                          <a href="" class="chargesummer selected">Summer</a>
+                          <a href="" class="chargewinter">Winter</a>
+                        </div>
+-->
+                      </div>
+                      <div id="q4_c1" class="carcomparison car_ioniqElectric">
+                        <div class="carjourney">
+                          <div class="carjourneycontainer">
+                            <div class="carjourneyimg">
+                              <p id="car1Name" style="position: relative; width: 100%">IONIQ Electric</p>
+                            </div>
+                            <div class="carjourneyfill fillhyundai" id="trip_line1" style="display:none"></div>
+                          </div>
+                        </div>
+                        <div class="cardata">
+                          <p class="pull-right text-center tripsnumber"  ><span id="car1NumberTrips">13</span>  <br><span>Trips</span></p>
+                        </div>
+                      </div>
+                      <div id="q4_c2" class="carcomparison car_BMWi3">
+                        <div class="carjourney">
+                          <div class="carjourneycontainer">
+                            <div class="carjourneyimg">
+                              <p id="car2Name" style="position: relative; width: 100%">BMW i3</p>
+                            </div>
+                            <div class="carjourneyfill" id="trip_line2" style="display:none"></div>
+                          </div>
+                        </div>
+                        <div class="cardata">
+                          <p class="pull-right text-center tripsnumber"  ><span id="car2NumberTrips">12</span><br><span>Trips</span></p>
+                        </div>
+                      </div>
+                      <div id="q4_c3" class="carcomparison car_nissanLeaf">
+                        <div class="carjourney">
+                          <div class="carjourneycontainer">
+                            <div class="carjourneyimg">
+                              <p id="car3Name" style="position: relative; width: 100% ">Nissan Leaf</p>
+                            </div>
+                            <div class="carjourneyfill" id="trip_line3" style="display:none"></div>
+                          </div>
+                        </div>
+                        <div class="cardata">
+                          <p class="pull-right text-center tripsnumber"  ><span id="car3NumberTrips">13</span><br><span>Trips</span></p>
+                        </div>
+                      </div>
+                      <div id="q4_c4" class="carcomparison car_fordFocus">
+                        <div class="carjourney">
+                          <div class="carjourneycontainer">
+                            <div class="carjourneyimg">
+                              <p id="car4Name" style="position: relative; width: 100%">Ford Focus</p>
+                            </div>
+                            <div class="carjourneyfill" id="trip_line4" style="display:none"></div>
+
+                          </div>
+                        </div>
+                        <div class="cardata">
+                          <p class="pull-right text-center tripsnumber"  ><span id="car4NumberTrips">14</span><br><span>Trips</span></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="quizparkathomeA" id="q5a" style="display:none">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <section class="quizfirstanswer">
+                <div><a href="#" class="navigationprev"></a><a href="#" class="navigationnext"></a></div>
+                <div class="container">
+                  <div class="headerquiz">
+                    <h2>Where would you park your IONIQ?</h2>
+                    <a href="index.html" class="closequiz"></a>
+                  </div>
+                  <div class="answercontainer">
+                    <div class="answer answerindividualgarage">
+                      <a href="#" onclick="quizOption(1);return false;">
+                        <div>
+                          <hr>
+                          <h3>I own my garage</h3>
+                          <h4>Individual</h4>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="answer answerrentgarage">
+                      <a href="#" onclick="quizOption(2);return false;">
+                        <div>
+                          <hr>
+                          <h3>I rent my space or garage</h3>
+                          <h4>Shared</h4>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="answer answerstreet">
+                      <a href="#" onclick="quizOption(3);return false;">
+                        <div>
+                          <hr>
+                          <h3>On the street</h3>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="quizparkathomeB" id="q5b" style="display:none">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <section class="quizfirstanswer">
+                <div><a href="" class="navigationprev"></a></div>
+                <div class="container">
+                  <div class="headerquiz">
+                    <h2>Where would you park your IONIQ?</h2>
+                    <a href="index.html" class="closequiz"></a>
+                  </div>
+                  <div class="answercontainer">
+                    <div class="answercontainerleft">
+                      <ul class="list-inline" id="optionselectorbullets">
+                        <li class="selectbullet"><a href="#" onclick="quizOption(1,1);return false;"></a></li>
+                        <li class="selectbulletfill"></li>
+                        <li class="selectbullet"><a href="#" onclick="quizOption(2,1);return false;"></a></li>
+                        <li class="selectbulletfill"></li>
+                        <li class="selectbullet"><a href="#" onclick="quizOption(3,1);return false;"></a></li>
+                      </ul>
+                      <ul class="list-inline" id="optionselector">
+                        <li>
+                          <a href="#" onclick="quizOption(1,1);return false;" class="">
+                            <p><span>Garage</span>Shared</p>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" onclick="quizOption(2,1);return false;" class="">
+                            <p><span>Apartment</span>Individual</p>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" onclick="quizOption(3,1);return false;" class="">
+                            <p><span>Street</span></p>
+                          </a>
+                        </li>
+                      </ul>
+                      <div class="imganswer imganswergarage"><div></div></div>
+                    </div>
+                    <div id="q5_d3" class="answercontainerright garageanswer">
+                      <div class="explanimg"></div>
+                      <div class="explantxt">
+                        <h2 id="q5_d1" class="garageanswer">Easy Peasy</h2>
+                        <p id="q5_d2" class="chargermessage garageanswer">IONIQ EV has two available charger options so you will always be ready to get things done around town.</p>
+                      </div>
+                      <div class="explantxt">
+                        <h2 class="apartmentanswer hidden">Shared space? No problem.</h2>
+                        <p class="chargermessage apartmentanswer hidden">IONIQ Plugin uses gas or charge, and IONIQ EV offers two charge-at-home options. Plus, there are 26 charging stations in your zip code.</p>
+                      </div>
+                      <div class="explantxt">
+                        <h2 class="streetanswer hidden">No place to plug in at home?</h2>
+                        <p class="chargermessage streetanswer hidden">With IONIQ Hybrid, You can feel good about going further on a gallon of gas and reducing CO2 emissions at the same time.</p>
+                      </div>
+                      <a href="#" class="text-center" id="sendinfo" data-toggle="modal" data-target="#modal_send_me_charge"><span>Send me charge-at-home details</span></a>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+    <div class="container">
+      <div class="row">
+                <div class="col-xs-12">
+        <section id="quizmorequestions">
+          <div class="container">
+            <div class="otherquestioncontainer">
+              <div class="otherquestion otherquestion1 current">
+                <span id="menu_q1">
+                  <a href="#" onclick="gotoQuizQuestion(1);"><h3>Are you a planner or more spontaneous?</h3></a>
+                </span>
+                <div id="menu_q1a" style="display:none;cursor:pointer;" onclick="gotoQuizQuestion(1)">
+                  <p><span class="glyphicon glyphicon-ok">&nbsp;</span>Done</p>
+                  <hr>
+                  <h3 id="q1_d4"></h3>
+                  <h4 id="q1_d5"></h4>
+                </div>
+              </div>
+              <div class="otherquestion otherquestion2">
+                <span id="menu_q2">
+                  <a href="#" onclick="gotoQuizQuestion(2);"><h3>How often do your charge your phone?</h3></a>
+                </span>
+                <div id="menu_q2a" style="display:none;cursor:pointer;" onclick="gotoQuizQuestion(2)">
+                  <p><span class="glyphicon glyphicon-ok">&nbsp;</span>Done</p>
+                  <hr>
+                  <h3 id="q2_d4"></h3>
+                  <h4 id="q2_d5"></h4>
+                </div>
+              </div>
+              <div class="otherquestion otherquestion3">
+                <span id="menu_q3">
+                  <a href="#" onclick="gotoQuizQuestion(3);"><h3>Where will your IONIQ take you?</h3></a>
+                </span>
+                <div id="menu_q3a" style="display:none;cursor:pointer;" onclick="gotoQuizQuestion(3)">
+                  <p><span class="glyphicon glyphicon-ok">&nbsp;</span>Done</p>
+                  <hr>
+                  <h3 id="q3_d4"></h3>
+                  <h4 id="q3_d5"></h4>
+                </div>
+              </div>
+              <div class="otherquestion otherquestion4">
+                <span id="menu_q4">
+                  <a href="#" onclick="gotoQuizQuestion(4);"><h3>What are your daily drives like? </h3></a>
+                </span>
+                <div id="menu_q4a" style="display:none;cursor:pointer;" onclick="gotoQuizQuestion(4)">
+                  <p><span class="glyphicon glyphicon-ok">&nbsp;</span>Done</p>
+                  <hr>
+                  <h3 id="q4_d4"></h3>
+                  <h4 id="q4_d5"></h4>
+                </div>
+              </div>
+              <div class="otherquestion otherquestion5">
+                <span id="menu_q5">
+                 <a href="#" onclick="gotoQuizQuestion(5);"><h3>Where would you park your IONIQ?</h3></a>
+                </span>
+                <div id="menu_q5a" style="display:none;cursor:pointer;" onclick="gotoQuizQuestion(5)">
+                  <p><span class="glyphicon glyphicon-ok">&nbsp;</span>Done</p>
+                  <hr>
+                  <h3 id="q5_d4"></h3>
+                  <h4 id="q5_d5"></h4>
+                </div>
+              </div>
+              <div id="quizgeneratesummary">
+                <div id="quizgeneratesummarycars">
+                  <div class="quizgeneratesummaryleft">
+                    <div class="summaryimagecontainer">
+                      <img src="imgs/car1.png" alt="Hyundai Ioniq" class="img-responsive">
+                    </div>
+                    <div id="ranking3">
+                      <img src="imgs/icon_electric.png" alt="Electric icon" class="img-responsive">
+                      <h4>ELECTRIC</h4>
+                    </div>
+                  </div>
+                  <div class="quizgeneratesummarycenter">
+                    <div class="summaryimagecontainer">
+                      <img src="imgs/car2.png" alt="Hyundai Ioniq" class="img-responsive active" id="ranking_car">
+                    </div>
+                    <div id="ranking1" class="'active'">
+                      <img src="imgs/icon_hybrid.png" alt="Hybrid icon" class="img-responsive">
+                      <h4>HYBRID</h4>
+                    </div>
+                  </div>
+                  <div class="quizgeneratesummaryright">
+                    <div class="summaryimagecontainer">
+                      <img src="imgs/car3.png" alt="Hyundai Ioniq" class="img-responsive">
+                    </div>
+                    <div id="ranking2">
+                      <img src="imgs/icon_plug-in_noactive.png" alt="Plugin icon" class="img-responsive">
+                      <h4>PLUG-IN</h4>
+                    </div>
+                  </div>
+                </div>
+                <a href="summary-report.html">View your IONIQ</a>
+              </div>
+            </div>
+          </div>
+        </section>
+                </div>
+      </div>
+    </div>
+    <section id="footer">
+      <div class="container">
+        <hr>
+        <div class="col-xs-12 col-md-4 col-md-offset-4 text-center" id="RRSS">
+          <a rel="nofollow" href="https://www.facebook.com/Hyundai?v=wall" target="_blank">
+            <img src="imgs/facebook.png" alt="Facebook" class="ico-footer-facebook">
+					</a>
+          <a rel="nofollow" href="https://twitter.com/HYUNDAI" target="_blank">
+            <img src="imgs/twitter.png" alt="Twitter" class="ico-footer-twitter">
+					</a>
+          <a rel="nofollow" href="https://instagram.com/hyundaiusa" target="_blank">
+            <img src="imgs/instagram-icon.png" alt="Instagram" class="ico-footer-instagram">
+					</a>
+          <a rel="nofollow" href="https://www.youtube.com/HyundaiUSA" target="_blank">
+            <img src="imgs/youtube.png" alt="Youtube" class="ico-footer-youtube">
+					</a>
+          <a rel="nofollow" href="https://www.hyundaiusa.com/myhyundai/myaccount/communication-preferences-notloggedon" target="_blank">
+           <img src="imgs/ic_email.png" alt="E-mail" class="ico-footer-email">
+					</a>
+        </div>
+        <div class="col-xs-12 text-center" id="logohyundai">
+          <img src="imgs/Hyundai_Icon.png" alt="Logotipo Hyundai">
+        </div>
+        <div class="col-xs-12 col-md-6 col-md-offset-3"><p>Hyundai is a registered trademark of Hyundai Motor Company. All rights reserved. ©2017 Hyundai Motor America.</p></div>
+        <div class="col-xs-12" id="footerlinks">
+          <div class="links linksleft">
+              <ul>
+                  <li><a href="https://www.hyundaiusa.com/dealer-locator/index.aspx">Find a Dealer</a></li>
+                  <li><a href="https://www.hyundaiusa.com/sitemap.aspx">Site Map</a></li>
+                  <li><a href="https://www.hyundaiusa.com/privacy-policy.aspx">Privacy Policy</a></li>
+                  <li><a href="https://www.hyundaiusa.com/owner-privacy-policy.aspx">Owner Privacy Policy</a></li>
+                  <li><a href="https://www.hyundaiusa.com/legal.aspx">Legal</a></li>
+              </ul>
+          </div>
+          <div class="links linksright">
+            <ul>
+                <li><a href="https://www.hyundaiusa.com/assurance/america-best-warranty.aspx">Warranty</a></li>
+                <li><a href="https://www.hyundaiusa.com/help-faq.aspx">FAQ/Help</a></li>
+                <li><a href="https://www.hyundaiusa.com/myhyundai/myaccount/communication-preferences-notloggedon">Email Updates</a></li>
+                <li><a href="https://www.hyundaiusa.com/contact-us.aspx">Contact Us</a></li>
+                <li><a href="https://www.hyundaiusa.com/terms-conditions.aspx">Terms of Use</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <hr>
+        <div class="col-xs-12 col-md-7 text-left" id="legalmessage">
+          <p>Non-US preproduction 2017 IONIQ with optional features shown.</p>
+          <p>12017 IONIQ Hybrid Blue: 57 City/59 Hwy/58 Combined. 2017 IONIQ Hybrid SEL/IONIQ Hybrid Limited: 55 City/54 Hwy/55 Combined. EPA estimates. For comparison only. Your actual mileage may vary with options, driving conditions, driving habits and vehicle’s condition.</p>
+        </div>
+      </div>
+    </section>
+
+      <div class="modal fade" tabindex="-1" role="dialog" id="modalregister">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <img src="imgs/register_screenshot.png" alt="" class="img-responsive">
+          </div>
+          <div class="modal-body">
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade modal_info" tabindex="-1" role="dialog" id="modal_send_me_charge">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="goToLogin();return false;">
+              <span aria-hidden="true">&times;</span></button>
+            <h2>Send me charge-at-home details.</h2>
+            <p>Receive more information on charger options.</p>
+          </div>
+          <div class="modal-body" style="margin-top:40px;">
+            <input type="text" id="userMail" placeholder="Enter email">
+            <div>
+              <a href="#" class="notnow" data-dismiss="modal" >Not now</a>
+              <a href="#" class="submit" data-dismiss="modal" onclick="goToLogin();return false;">Submit</a>
+            </div>
+            <BR />
+            <img src="imgs/charge_cable.png" class="back01">
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
